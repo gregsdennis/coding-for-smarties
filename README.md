@@ -1,2 +1,1 @@
-# coding-for-smarties
-Content for my blog.
+Content for my blog
