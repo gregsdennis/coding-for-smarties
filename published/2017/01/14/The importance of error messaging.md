@@ -37,7 +37,7 @@ After some searching, I figured out that `Error(Exception)` is an *extension* me
 
 Now, while butler-esque error messages like this one would be nice, I don't think that's going to happen for compiler errors.  Like the code on which they report, we need them to be non-verbose and to the point.  But they should also explain what the problem *is* so that the issue can be fixed and the programmer can get on with their life.
 
-> That's an extension method... <small><small>idiot</small></small>.
+> That's an extension method... <span style="font-size: xx-small;">idiot</span>.
 
 That's a bit harsh.
 
