@@ -1,3 +1,5 @@
+# A Brief Start with UWP
+
 At work I was recently assigned to a UWP app.  This post chronicles my discoveries over the first couple days.
 
 ## A first glance
@@ -24,18 +26,20 @@ The styles were all located in a single, giant XAML file which was then referenc
 
 To address this, I reorganized all of the styles in separate XAML files based on its target type.  Then I created a single *Styles.xaml* file that referenced them in the `MergedDictionaries` property.  Then I created a *Generic.xaml* file which merged the *Styles.xaml* file, and put all of the XAML files into a *Themes* folder.
 
-    - MyProject.UWP
-	    - Folder1
-	    - Folder2
-	    - Themes
-		    - Styles
-			    - Buttons.xaml
-			    - TextBoxes.xaml
-			    - ...
-		    - Styles.xaml
-		    - Generic.xaml
-		- Folder3
-		- ...
+```
+- MyProject.UWP
+	- Folder1
+	- Folder2
+	- Themes
+		- Styles
+			- Buttons.xaml
+			- TextBoxes.xaml
+			- ...
+		- Styles.xaml
+		- Generic.xaml
+	- Folder3
+	- ...
+```
 
 Then I went to reference *Generic.xaml* in *App.xaml* and found that they had defined all of their brushes directly in that file... and on some `ThemeDictionaries` property that I've never seen.
 

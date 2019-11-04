@@ -1,8 +1,12 @@
+# They Think of Everything!
+
 Ordinarily I like to pontificate on the merits (or detriments) of particular code design decisions.  Instead today, I'd like to share a neat consequence of C# 6 that I found the other day.
 
 We're all familiar with the null-conditional operator `?.` when accessing members (properties/functions).  What you may not immediately see is the ability to use the `?` when accessing an object via indexers.  Check it out:
 
-	var value = myObj?[5];
+```c#
+var value = myObj?[5];
+```
 
 As you might expect, this line of code returns `myObj[5]` when `myObj` is not null, or `null` if it is.
 

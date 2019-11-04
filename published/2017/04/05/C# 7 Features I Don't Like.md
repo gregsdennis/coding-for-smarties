@@ -26,7 +26,7 @@ So overall, it seems that I've come to terms with C# 6.  Interesting.
 
 Let us now take a look at all the syntactic goodness that C# 7 claims to offer.
 
-><small>For those interested, I'm following [this list]() of features.  Occasionally, I'll use their examples.</small>
+*For those interested, I'm following [this list](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7) of features.  Occasionally, I'll use their examples.*
 
 ### Out variables
 
@@ -34,9 +34,11 @@ This is the same feature as *Declaration Variables* that didn't make C# 6.  I'm 
 
 The part I'm not quite sure of is the "discard" variable.  Basically, when you have an `out` variable that you don't care about, you can substitute the declaration (type and variable name) with an underscore (`_`) and the compiler will generate a variable for you.  I think it's a bit weird because in any other scenario, the underscore is a valid variable name, and this creates a special case for it.  Still, `value` is a valid name anywhere except in property setters, so maybe I'll get used to it.
 
-	// We don't care about the second output.
-	// The compiler will generate something so that it works.
-	SomeMethod(out int i, out _);
+```c#
+// We don't care about the second output.
+// The compiler will generate something so that it works.
+SomeMethod(out int i, out _);
+```
 
 I'm not terribly sure if the discard variable works for multiple `out` variables simultaneously, but I imagine it probably would.  The C# team is pretty good at covering those types of scenarios.
 
@@ -48,25 +50,31 @@ This one is both nice and horrible.  Pattern matching allows us to query what *s
 
 This extends the `is` keyword to support patterns.
 
-	myVar is [some constant expression]
-	myVar is [some variable declaration]
+```c#
+myVar is [some constant expression]
+myVar is [some variable declaration]
+```
 
 I'm not so sure about the `is <constant>` one.  The only examples I've seen have the constant as `null`.  I can't tell a difference between this expression and just a plain equality comparison.
 
 But the variable declaration one seems useful, and the idea looks to merge in with the out variables.  So now, instead of doing this
 
-	int i;
-	if (someObject is int)
-		i = (int)someObject;
-	else return;
-	Console.WriteLine($"value = {i}");
+```c#
+int i;
+if (someObject is int)
+	i = (int)someObject;
+else return;
+Console.WriteLine($"value = {i}");
+```
 
-><small>See how I used string interpolation from C# 6?</small>
+*See how I used string interpolation from C# 6?*
 
 now you can do this
 
-	if (!(someObject is int i)) return;
-	Console.WriteLine($"value = {i}");
+```c#
+if (!(someObject is int i)) return;
+Console.WriteLine($"value = {i}");
+```
 
 It makes sense.  I may use this.
 
@@ -74,26 +82,28 @@ It makes sense.  I may use this.
 
 The other one extends the `switch`-`case` statements to allow us to switch on any object, not just primitive types (and enums).  It also allows us to provide non-constant values or even type patterns as the cases.
 
-	Shape shape = [something];
-	switch (shape)
-	{
-		case Circle c:
-			Console.WriteLine($"This is a circle with radius {c.Radius}.");
-			break; 
-		case Rectangle s where s.X == s.Y:
-			Console.WriteLine($"This is a {s.X} x {s.Y} square.");
-			break; 
-		case Rectangle r:
-			Console.WriteLine($"This is a {s.X} x {s.Y} rectangle.");
-			break; 
-		default:
-			Console.WriteLine("I don't know what kind of shape this is.");
-			break;
-		case null:
-			throw new Exception("What have you done?");
-	}
+```c#
+Shape shape = [something];
+switch (shape)
+{
+	case Circle c:
+		Console.WriteLine($"This is a circle with radius {c.Radius}.");
+		break; 
+	case Rectangle s where s.X == s.Y:
+		Console.WriteLine($"This is a {s.X} x {s.Y} square.");
+		break; 
+	case Rectangle r:
+		Console.WriteLine($"This is a {s.X} x {s.Y} rectangle.");
+		break; 
+	default:
+		Console.WriteLine("I don't know what kind of shape this is.");
+		break;
+	case null:
+		throw new Exception("What have you done?");
+}
+```
 
-This seems useful.  We've all wanted to switch on types.  I've even created a few classes that will allow me to do that.  This makes those masterpieces defunct.  Thanks, <strike>Obama</strike> Microsoft.
+This seems useful.  We've all wanted to switch on types.  I've even created a few classes that will allow me to do that.  This makes those masterpieces defunct.  Thanks, ~Obama~ Microsoft.
 
 ### Tuples
 
@@ -101,11 +111,13 @@ This is no more than allowing methods to return anonymous types.  I'm not sure w
 
 The feature looks like this:
 
-	(string, string, string) LookupName(long, id)
-	{
-		[do the lookup]
-		return (first, middle, last);
-	}
+```c#
+(string, string, string) LookupName(long, id)
+{
+	[do the lookup]
+	return (first, middle, last);
+}
+```
 
 To access the return values, you take the object that's returned (yes, it's still a single object) and use properties `Item1`, `Item2`, and `Item3`.  Thus is the pattern.
 
@@ -113,7 +125,9 @@ There are other options, like creating labels for your return properties (just l
 
 All in all, it's just "methodizing" anonymous types.  For example, this is old news:
 
-	var names = people.Select(p => new {p.First, p.Middle, p.Last});
+```c#
+var names = people.Select(p => new {p.First, p.Middle, p.Last});
+```
 
 Same thing.  `names` is now an `IEnumerable<<<<SomeCompilerGeneratedType>>>>`.  Why give the feature a new name?  That's just confusing.
 
@@ -125,18 +139,22 @@ So let's say you have received your tuple from the method above, and you want to
 
 This
 
-	class Name { ... }
+```c#
+class Name { ... }
 
-	...
+...
 
-	var name = LookupName(<some id>);
-	var first = name.First;
-	var middle = name.Middle;
-	var last = name.Last;
+var name = LookupName(<some id>);
+var first = name.First;
+var middle = name.Middle;
+var last = name.Last;
+```
 
 turns into this
 
-	var (first, middle, last) = LookupName(<some id>);
+```c#
+var (first, middle, last) = LookupName(<some id>);
+```
 
 And just like the new out variables, you can use an underscore for any values you don't care about.
 
@@ -150,81 +168,90 @@ In C# 6, we have lambda functions.  The primary way most of us use lambdas is in
 
 One of the more exotic uses I've had for lambdas is conditional operations: if a condition is met, do one thing with some data, otherwise do some other thing.  Simplistically, it looks like this:
 
-	Func<int, int> doMath;
-	if (shouldIncrease)
-		doMath = i => i++;
-	else
-		doMath = i => i >> 1;
-	Console.WriteLine(doMath(value));
+```c#
+Func<int, int> doMath;
+if (shouldIncrease)
+	doMath = i => i++;
+else
+	doMath = i => i >> 1;
+Console.WriteLine(doMath(value));
+```
 
 Now with local functions, we have the ability to replace the lambdas with functions that are only scoped within this method (just like our lambdas).
 
-	int Increment(int i)
-	{
-		return i++;
-	}
-	int Half(int i)
-	{
-		return i >> 1;
-	}
-	Func<int, int> doMath;
-	if (shouldIncrease)
-		doMath = Increment;
-	else
-		doMath = Half;
-	Console.WriteLine(doMath(value));
+```c#
+int Increment(int i)
+{
+	return i++;
+}
+int Half(int i)
+{
+	return i >> 1;
+}
+Func<int, int> doMath;
+if (shouldIncrease)
+	doMath = Increment;
+else
+	doMath = Half;
+Console.WriteLine(doMath(value));
+```
 
 No real improvement there.  In fact I think it's worse.
 
 What's interesting here, though is that we can do funky things with these methods that we can't do with lambdas, like the new tuple returns.
 
 > While writing this, I thought that lambdas couldn't do recursion, but then I worked out this awesomeness.
-> 
-	Func<Func<int, int>> getFib;
-	Func<int, int> fibonacci = i => 
-		{
-			if (i < 0) throw new 
-			if (i == 0 || i == 1) return 0;
-			return getFib()(i-1)+getFib(i-2);
-		};
-	getFib = () => fibonacci;
-	Console.WriteLine(fibonnaci(value));
+>```c#
+>Func<Func<int, int>> getFib;
+>Func<int, int> fibonacci = i => 
+>{
+>	if (i < 0) throw new 
+>	if (i == 0 || i == 1) return 0;
+>	return getFib()(i-1)+getFib(i-2);
+>};
+>getFib = () => fibonacci;
+>Console.WriteLine(fibonnaci(value));
+>```
 > This'll work... to the frustration of your peers.
 
 Here's an interesting example from the post I mentioned before:
 
-	public IEnumerable<T> Filter<T>(IEnumerable<T> source, Func<T, bool> filter)
+```c#
+public IEnumerable<T> Filter<T>(IEnumerable<T> source, Func<T, bool> filter)
+{
+	if (source == null) throw new ArgumentNullException(nameof(source));
+	if (filter == null) throw new ArgumentNullException(nameof(filter));
+
+	return Iterator();
+
+	IEnumerable<T> Iterator()
 	{
-	    if (source == null) throw new ArgumentNullException(nameof(source));
-	    if (filter == null) throw new ArgumentNullException(nameof(filter));
-	
-	    return Iterator();
-	
-	    IEnumerable<T> Iterator()
-	    {
-	        foreach (var element in source) 
-	        {
-	            if (filter(element)) { yield return element; }
-	        }
-	    }
+		foreach (var element in source) 
+		{
+			if (filter(element)) { yield return element; }
+		}
 	}
+}
+```
 
 The author argues that with this approach, the arguments can be checked outside of enumeration.  This is true.  But it can be done like this, too:
 
-	public IEnumerable<T> Filter<T>(IEnumerable<T> source, Func<T, bool> filter)
+```c#
+public IEnumerable<T> Filter<T>(IEnumerable<T> source, Func<T, bool> filter)
+{
+	if (source == null) throw new ArgumentNullException(nameof(source));
+	if (filter == null) throw new ArgumentNullException(nameof(filter));
+
+	return Iterator(source, filter);
+}
+private IEnumerable<T> Iterator(IEnumerable<T> source, Func<T, bool> filter)
+{
+	foreach (var element in source) 
 	{
-	    if (source == null) throw new ArgumentNullException(nameof(source));
-	    if (filter == null) throw new ArgumentNullException(nameof(filter));
-	
-	    return Iterator(source, filter);
+		if (filter(element)) { yield return element; }
 	}
-    private IEnumerable<T> Iterator(IEnumerable<T> source, Func<T, bool> filter)
-    {
-        foreach (var element in source) 
-        {
-            if (filter(element)) { yield return element; }
-        }
-    }
+}
+```
 
 In fact, any local function can be implemented as a private function.  And it becomes available for any other member within the class.
 
@@ -242,9 +269,11 @@ The other improvement is that we now get binary literals (`0b0001`), whereas we 
 
 Combining these literal features, we get the ability to write out horrific chains of ones and zeros, *but* we get to separate their digits *however we like*.
 
-	0b1100101001100101
-	0b1100_1010_0110_0101
-	0b11_001010011_00101
+```
+0b1100101001100101
+0b1100_1010_0110_0101
+0b11_001010011_00101
+```
 
 All of these are valid and equivalent.  Yeah, this'll help readability.
 

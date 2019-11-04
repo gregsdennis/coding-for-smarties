@@ -1,12 +1,14 @@
+# The Cup will be with You.  Always.
+
 Well, well, well.  Look who just won the Stanley Cup!  Let's take a look at the journey that brought us here.
 
-###Some Facts
+## Some Facts
 
 In 2003, Trevor Daley played his first NHL season after having been drafted by the Dallas Stars.  He stayed with the Stars for 12 seasons, always giving his best while growing into a defensive leader.  In the summer of 2015, the Stars decided that they needed more offense and traded Daley to... another team (we don't talk about that).  After a few rocky months with... that other team, they traded him to the Pittsburgh Penguins, where he flourished, ultimately hoisting the coveted Cup last night.
 
 According to [Yahoo Sports](http://sports.yahoo.com/news/mom-battling-cancer-daley-gets-cup-first-crosby-041216471--nhl.html), General Manager of the Penguins Jim Rutherford said that Daley helped reshape the way the Penguins played.  As of December 12th, the Penguins were looking at a season that wouldn't even see the playoffs.  Daley's entry into the Pengiuns' roster on December 14th arguably changed that.
 
-###Some Feels
+## Some Feels
 
 Exactly eleven months ago, when the Stars announced that they were trading Daley, [I was devastated](https://codingforsmarties.wordpress.com/2015/07/13/goodbye-daley-you-will-be-missed/).  How could they trade such a promising and loyal player?  Especially when he was finally under a coaching style that fit his play style?  And to... that team?!
 
@@ -30,7 +32,7 @@ The Penguins won the conference round.  And then, in an exciting Stanley Cup Fin
 
 After hearing about his broken ankle, and that he wouldn't play in the Cup, I continually thought that if the Penguins won it would be a hollow victory for Daley.  Sure, he'd get his name on the trophy and he'd get a ring, but would not playing in the games reduce the impact of the achievement?  Watching him hoist that beautiful Cup, though, all doubts were erased.  He knew that he was a major factor in the Penguins even being in contention.  He was thrilled to be there, supporting his team, winning with his team.
 
-###Some Saltiness
+## Some Saltiness
 
 So, Dallas Stars, are you still happy with your trade?  I think I made it clear that I wasn't when it happened, and I'm still not happy that I can't watch my favorite player in Victory Green.
 
@@ -40,7 +42,7 @@ But they don't have him anymore.  They don't have him because they made a stupid
 
 And after the Penguins won, all of the Stars players, alumni, broadcasters, and "fans" were quick to offer their congratulations via Facebook and Twitter to the former Star.  However I can't help but think that the reaction would have been the same for Brendon Dillon (also formerly a Star, now a Shark) had the other team won.
 
-###Some Conclusions
+## Some Conclusions
 
 In the end, I'm happy about two things:
 

@@ -11,17 +11,17 @@ Today we're going to talk about breaking changes in libraries.  Specifically, we
 
 A breaking change is any change which modifies the **public interface** to a module in such a way that causes any consuming modules to fail either at compile-time or run-time.  In other words, any change which requires consuming code to change in order to maintain the same behavior.
 
-><small>**NOTE** In this post, we're only going to cover compile-time breakages.  Run-time breakages only occur when the intended behavior of a module changes.  We're going to assume that we want the same (or additional) behavior as the previous version.</small>
+***NOTE** In this post, we're only going to cover compile-time breakages.  Run-time breakages only occur when the intended behavior of a module changes.  We're going to assume that we want the same (or additional) behavior as the previous version.*
 
 In order to explore this further we need to first consider the code which consumes our library.  This code relies on certain types which are defined by our library.  When these types change, the code which uses them is affected.
 
 There are three basic types of compile-time changes that a library can have:
 
 1. Adding new types
-2. Modifying existing types
-	a. Adding members
-	b. Removing members
-3. Removing types
+1. Modifying existing types
+	1. Adding members
+	1. Removing members
+1. Removing types
 
 The last one (removing types) seems obvious.  If we remove a type that a consumer is using, the code which references that type will no longer compile.  This is always a breaking change.
 
@@ -45,7 +45,7 @@ But then we have to consider that there may be code that depends on that method 
 
 This means that *any* change to an abstraction should be considered a breaking change.
 
-><small>**NOTE** In .Net (and other frameworks) we have abstract classes as an abstraction type.  These abstractions can also define their own implementations.  This is the exception to the above rule: if an abstract class adds functionality *and* provides its own implementation, then the change is like an addition to a concrete class and is non-breaking.</small>
+***NOTE** In .Net (and other frameworks) we have abstract classes as an abstraction type.  These abstractions can also define their own implementations.  This is the exception to the above rule: if an abstract class adds functionality *and* provides its own implementation, then the change is like an addition to a concrete class and is non-breaking.*
 
 ## How can I avoid making breaking changes?
 
@@ -92,4 +92,4 @@ The thing to remember here, though, is that most of us are used to application v
 
 It's our consumption of versions of things that shapes our perception of how we should version our things.  Higher versions tend to imply older product but may merely indicate growth.  ("You're on version 3 already?!  You just released version 1 last month!")  We need to remember that in the end, it's all just numbers.  It's better to have those numbers be meaningful somehow.  Once that clicks, it doesn't matter so much what the numbers are.
 
->**BONUS** And don't skip numbers; that's just confusing.  (Angular, I'm looking at you.)
+***BONUS** And don't skip numbers; that's just confusing.  (Angular, I'm looking at you.)*

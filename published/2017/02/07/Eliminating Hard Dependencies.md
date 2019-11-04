@@ -1,4 +1,6 @@
-You found it!  After many hours of scouring the internet, you've finally discovered the library that does precisely what you need.  Except... it has a dependency... on a package that your architect has declared unfit for your company. <!-- MORE --> Your options are:
+# Eliminating Hard Dependencies
+
+You found it!  After many hours of scouring the internet, you've finally discovered the library that does precisely what you need.  Except... it has a dependency... on a package that your architect has declared unfit for your company. Your options are:
 
 - Persuade your architect to accept this library because you really need it (not likely)
 - Download the source and eliminate the dependency (only works if the source is available)
@@ -6,7 +8,7 @@ You found it!  After many hours of scouring the internet, you've finally discove
 
 Today I'm not going to present a magic bullet solution to that problem.  There is none.  Instead we're going to explore how to write your libraries so that you don't put others in this horrible position.
 
-><small>**NOTE** I touched on this a bit in a [post I wrote last year](https://codingforsmarties.wordpress.com/2015/10/24/microsoft-did-it-wrong/).  But it seemed to me that the topic needed to be revisited.</small>
+***NOTE** I touched on this a bit in a [post I wrote last year](https://codingforsmarties.wordpress.com/2015/10/24/microsoft-did-it-wrong/).  But it seemed to me that the topic needed to be revisited.*
 
 ## The scenario
 

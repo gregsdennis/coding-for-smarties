@@ -1,8 +1,10 @@
-I was on the train in to work this morning when an [article](http://www.makeuseof.com/tag/goodbye-trello-5-alternative-free-kanban-board-tools/) came across my Google feed.  The article is just one of many over the past few years that talk about task management tools and why Trello is inadequate, and decided that I'm tired of Trello being lumped in with apps that are specifically designed around application development and team/task management.<!--more-->
+# Organize All the Things
+
+I was on the train in to work this morning when an [article](http://www.makeuseof.com/tag/goodbye-trello-5-alternative-free-kanban-board-tools/) came across my Google feed.  The article is just one of many over the past few years that talk about task management tools and why Trello is inadequate, and decided that I'm tired of Trello being lumped in with apps that are specifically designed around application development and team/task management.
 
 Which brought to mind the [mantra that Trello started with](http://blog.trello.com/launch/):
 
->Trello is probably the simplest thing in the world: it's a web page where you make a bunch of lists.
+> Trello is probably the simplest thing in the world: it's a web page where you make a bunch of lists.
 
 That's it!  It's just a web app that allows you to organize stuff.
 
@@ -10,7 +12,7 @@ While most people use Trello as a kanban or scrum board, it's really more generi
 
 Yes, there are other apps that can do app development management better, but those apps are specifically designed to manage one thing: application development.
 
-###The intent
+## The intent
 
 Trello was originally designed to provide the most basic, generic organization of anything.  Some time ago, they posted the winners of a contest they held on who had the best uses for Trello.  The winners really thought outside the box:
 
@@ -34,13 +36,13 @@ Most of these don't fit into the standard to-do list; it's just lists of stuff.
 
 Also, for those times when what's offered just isn't quite enough, they've opened up the application so that third party developers can make add-ons.  There are a [bunch of integrations](https://trello.com/integrations) that other people have written to combine Trello with other services and sites to make some really cool functionality.
 
-###My point is...
+## My point is...
 
 For any given task, e.g. application development, there might be a better tool than Trello: one that's designed specifically for just that task.  But when it comes to general organization of anything, Trello is the best.
 
 So to everyone out there who looks to compare Trello to some other site explicitly designed for team and task management, don't trash Trello because it lacks features it's not supposed to have.  Trello is perfect at what it's intended to be.
 
-###That said...
+##  That said...
 
 In preparation for this post, I decided to take a look at [Trello's home page](http://trello.com) (you have to log out to see it).  I was disappointed.  It seems that they're actually marketing it as a task/team management tool now rather than the generic organizational web app that it started as.  Maybe that's more in line with the enterprise-level offerings they now have, but it's not in line with the original vision.
 

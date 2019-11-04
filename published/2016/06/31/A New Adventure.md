@@ -1,8 +1,10 @@
+# A New Adventure
+
 I'd like to apologize to my readers for my recent absence.  I have been in the midst of a rather large move.  As soon as we're settled, I'll continue the series on plugins.
 
 Many of you know (from my hockey fandom) that I have been writing from the Dallas, Texas area.  However this post is being written from my new home:  Auckland, New Zealand!
 
-#How I came to live here
+## How I came to live here
 
 It all started over six years ago.  The epic movie *Avatar* had just been released.  It was one of the first major motion pictures that my wife and I had seen in 3D.
 
@@ -14,7 +16,9 @@ I began to research multi-layer LCD displays and found that one company, based i
 
 Sadly, the idea didn't pan out.  There were several issues with the approach which I won't go into here.  But I did get to stay in Auckland for a week, and I flew on the Boeing 777 (one from the bucket list)!
 
-##A dream is born
+![777 in front of a 747]()
+
+### A dream is born
 
 Upon my return home, I declared to my wife that we needed to move.  We immediately began to research the cost of moving.  Unfortunately, we found that we were not financially ready for such a large change.  But at least we had an idea of what we needed to do.
 
@@ -24,23 +28,23 @@ I can't say that we were fully committed to realizing the move.  We didn't elimi
 
 You might think that if we had seriously focused on making this dream come true that we might have been able to move sooner, but I can't escape the evidence pointing to God's perfect timing for moving when we did.
 
-##The breakthrough
+### The breakthrough
 
 The realization of the dream started last October when we received the first of three (relatively) large deposits, the other two to come early the following year.  I did some quick math and realized that the other two expected checks would total just slightly more than the cost we had estimated all those years ago.
 
 A thought (that may not have been my own) entered my head:  if you're going to move to New Zealand, now is the time.  I walked downstairs and proposed the idea of moving to my wife.  After some discussion and coming to terms with the idea that this may actually happen, the decision was made.
 
-##Now what?
+## Now what?
 
 I knew from my previous research that there were a few things we needed to take care of before we could move.
 
-###Visit the family
+### Visit the family
 
 About a month before all of this happened, my extended family started planning a family reunion for the Fourth of July weekend in 2016.  We absolutely had to attend this, which meant that the move would need to be after the reunion.  
 
 Timing for the move: late July or early August.
 
-###Hire an agent
+### Hire an agent
 
 I realized that this effort was too important for me to try this on my own.  It wasn't that I couldn't have done it.  Rather my concern was that I'd forget something or completely miss that I needed to fill out a certain form.  I wanted someone to manage the residence application process and advise me on all of our options.
 
@@ -48,7 +52,7 @@ After some research, we settled on a company to help us.
 
 When I explained our schedule, our agent said that we were in perfect position to keep it.
 
-###Get a job
+### Get a job
 
 I immediately posted my CV on all of the New Zealand job sites I could find.  I even applied for about 30 jobs.  Whenever I received interest, I would have to explain that I'm just starting this journey and what our timing was
 
@@ -62,7 +66,7 @@ Three Skype interviews later, I had an employment contract in hand!  Perfectly t
 
 I received the work visa mid-June and bought tickets for my family and I to fly out.
 
-###Manage our stuff
+### Manage our stuff
 
 When moving in America, most of us take all of the crap that we've accumulated over the years.  If you have a stuffed garage here, it's likely you'll have a stuffed garage there.
 
@@ -87,7 +91,7 @@ I can't describe to you how much work this was.
 
 The last big things to sell were our cars and the house.
 
-##Time to move
+## Time to move
 
 It was time.  We had the one-way plane tickets, I had finished my final couple weeks with GameStop, and we were finally finished packing everything we were taking with us.
 
@@ -97,7 +101,7 @@ It was an Airbus A380.  I had seen one at the Auckland airport when I had visite
 
 One 17-hour flight later, we found ourselves in Sydney.
 
-##Murphy strikes again
+## Murphy strikes again
 
 I had been told by our immigration agent that while the work visa would cover me, my wife and kids would be able to enter the country on visitor visas while we apply for residence.  What she failed to mention was that they would need an exit strategy from New Zealand in order to get the visas.
 
@@ -113,7 +117,7 @@ We finally got on the rescheduled plane and flew to Auckland.  We were home.
 
 That was Thursday.
 
-##The current state of things
+## The current state of things
 
 Honestly, we expected the house to sell and close before we left.  We still have some financial obligations for which we need the proceeds from the house to fulfill.  We're working on closing an offer now.  We've addressed all of the documents we need to physically sign, and everything else can be e-signed.
 

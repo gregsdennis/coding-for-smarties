@@ -1,4 +1,6 @@
->...One Converter to bring them all and in the XAML bind them...
+# Lord of the Converters
+
+> ...One Converter to bring them all and in the XAML bind them...
 
 Last time, I briefly mentioned a converter that I created for WPF that helps solve the Cambrian Explosion problem that comes with creating specialized converters.  Today I'll go over that converter and what makes it tick.
 
@@ -14,58 +16,64 @@ If only you had a way to combine them.
 
 Let's start by simply creating a converter that combines our two converters explicitly.  We're going to skip the static instance stuff as we're not going to use it in this case.
 
-    public class AggregateConverter : IValueConverter
+```c#
+public class AggregateConverter : IValueConverter
+{
+	public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 	{
-		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-		{
-			var currentValue = HasItemsConverter.Instance.Convert(value, targetType, parameter, culture);
-			currentValue = BoolToVisibilityConverter.FalseToCollapsed.Convert(currentValue, targetType, parameter, culture);
+		var currentValue = HasItemsConverter.Instance.Convert(value, targetType, parameter, culture);
+		currentValue = BoolToVisibilityConverter.FalseToCollapsed.Convert(currentValue, targetType, parameter, culture);
 
-			return currentValue;
-		}
-
-		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-		{
-			throw new NotImplementedException();
-		}
+		return currentValue;
 	}
+
+	public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+	{
+		throw new NotImplementedException();
+	}
+}
+```
 
 Okay.  Not bad, but we need to make this a bit more generic so that we can specify which converters to use in the XAML.  To support this, we need to create an `IList` property and initialize it, then we tell the compiler that this property is the default so that we can just list our converters directly as content.  Lastly, we take advantage of a little LINQ magic to combine them in the proper sequence.
 
-	// These attributes let us just add converters as content.
-	[DefaultProperty(nameof(Converters))]
-	[ContentProperty(nameof(Converters))]
-    public class AggregateConverter : IValueConverter
+```c#
+// These attributes let us just add converters as content.
+[DefaultProperty(nameof(Converters))]
+[ContentProperty(nameof(Converters))]
+public class AggregateConverter : IValueConverter
+{
+	// Definitely need to initialize this; otherwise we'd get a NullReferenceException.
+	public IList Converters { get; } = new List<IValueConverter>();
+
+	public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 	{
-		// Definitely need to initialize this; otherwise we'd get a NullReferenceException.
-		public IList Converters { get; } = new List<IValueConverter>();
-
-		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-		{
-			return Converters.Aggregate(value, (v, c) => Apply(c, v, targetType, parameter, culture);
-		}
-
-		private object Apply(IValueConverter converter, object value, Type targetType,
-							 object parameter, CultureInfo culture)
-		{
-			return converter.Convert(value, targetType, parameter, culture);
-		}
+		return Converters.Aggregate(value, (v, c) => Apply(c, v, targetType, parameter, culture);
 	}
+
+	private object Apply(IValueConverter converter, object value, Type targetType,
+							object parameter, CultureInfo culture)
+	{
+		return converter.Convert(value, targetType, parameter, culture);
+	}
+}
+```c#
 
 We can use it like this:
 
-	<Border>
-		<Border.Visibility>
-			<Binding Path="MyList">
-				<Binding.Converter>
-					<cvtr:AggregateConverter>
-						<x:Static Member="cvtr:HasItemsConverter.Instance"/>
-						<x:Static Member="cvtr:BoolToVisibilityConverter.FalseToCollapsed"/>
-					</cvtr:AggregateConverter>
-				</Binding.Converter>
-			</Binding>
-		</Border.Visibility>
-	</Border>
+```xml
+<Border>
+	<Border.Visibility>
+		<Binding Path="MyList">
+			<Binding.Converter>
+				<cvtr:AggregateConverter>
+					<x:Static Member="cvtr:HasItemsConverter.Instance"/>
+					<x:Static Member="cvtr:BoolToVisibilityConverter.FalseToCollapsed"/>
+				</cvtr:AggregateConverter>
+			</Binding.Converter>
+		</Binding>
+	</Border.Visibility>
+</Border>
+```
 
 Meh.  Not great to look at... or use... but it works.  Let's see if we can clean it up a bit.
 
@@ -73,33 +81,43 @@ Meh.  Not great to look at... or use... but it works.  Let's see if we can clean
 
 So the nice thing about using things like bindings and static resources is that they have markup extensions that allow a really simple and terse syntax.  You've seen them:
 
-	Visibility="{Binding MyValue, Converter={x:Static cvtr:BoolToVisibilityConverter.FalseToCollapsed}}"
-	Foreground="{StaticResource MyBrush}"
+```js <!-- not really js, but it give the highlighting I want -->
+Visibility="{Binding MyValue, Converter={x:Static cvtr:BoolToVisibilityConverter.FalseToCollapsed}}"
+Foreground="{StaticResource MyBrush}"
+```
 
 This syntax is our goal.  But unlike `BindingExtension` and `StaticResourceExtension`, we won't build a separate class; we're just going to make our converter do it directly.
 
 To implement this, we need to update our converter so that it derives from `MarkupExtension` and then override the `ProvideValue()` method.  I've [written about markup extensions before](https://codingforsmarties.wordpress.com/2016/12/20/reinventing-the-wheel/) so I'm going to gloss over some of the details.  Instead, here's the completed method.
 
-	public override object ProvideValue(IServiceProvider serviceProvider)
-	{
-		return this;
-	}
+```c#
+public override object ProvideValue(IServiceProvider serviceProvider)
+{
+	return this;
+}
+```
 
 Shockingly complex, I know.  Now we can do this:
 
-	{cvtr:AggregateConverter}
+```
+{cvtr:AggregateConverter}
+```
 
 Well that doesn't help much.  We can create a converter, but we have no way of passing the sub-converters into it.  What we want is:
 
-	{cvtr:AggregateConverter {x:Static cvtr:HasItemsConverter.Instance}
-							 {x:Static cvtr:BoolToVisibilityConverter.FalseToCollapsed}}
+```
+{cvtr:AggregateConverter {x:Static cvtr:HasItemsConverter.Instance}
+						 {x:Static cvtr:BoolToVisibilityConverter.FalseToCollapsed}}
+```
 
 To do this, we need to create a constructor.  Ideally, we'd want our constructor to take any number of converters.  In C#, this means we need to use the `params` keyword, like this:
 
+```c#
 	public AggregateConverter(params IValueConverter[] converters)
 	{
 		Converters = converters.ToList();
 	}
+```
 
 Now we're getting an error that says there isn't a constructor that takes two arguments, and you're like, "IT'S RIGHT THERE!"  That's when you figure out that the `params` keyword is really just a C# compiler trick, and there's actually only one parameter of type `IValueConverer[]`, an array.  So instead we have to create a series of constructors, each one taking a different number of converters.  I decided to create constructors to support between two and five converters.  I'm sure you can imagine how to build those.
 

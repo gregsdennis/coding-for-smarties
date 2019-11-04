@@ -1,6 +1,8 @@
+# Overriding Static Members in C#
+
 Yeah, you read that right.  We're gonna break some rules!
 
-><small>I feel I must apologize for my absence. I've been really busy over the past year.  New job, new house, all my stuff from TX finally arrived, had family visit (twice), Manatee.Trello and Manatee.Json picked up some activity, *and* I started participating in the JSON Schema discussions over at their GitHub repo for the specification.  I appreciate the reader's patience.</small>
+***NOTE** I feel I must apologize for my absence. I've been really busy over the past year.  New job, new house, all my stuff from TX finally arrived, had family visit (twice), Manatee.Trello and Manatee.Json picked up some activity, *and* I started participating in the JSON Schema discussions over at their GitHub repo for the specification.  I appreciate the reader's patience.*
 
 One of the things that every C# developer should know is that you **cannot** declare static members as abstract or virtual and, therefore, cannot override them.  You *can* created *new* members with the same name, but that doesn't have the same behavior as inheritance.  Just for completeness, let's review how the `new` keyword works before we depart from sane development practices.
 
@@ -8,7 +10,7 @@ One of the things that every C# developer should know is that you **cannot** dec
 
 Suppose we have a class with a member.  It could be a property, method, event, or a field.  For this example, we'll use a property.
 
-```csharp
+```c#
 public class ExistingClass
 {
 	public string Name { get; set; } // "Cat"
@@ -19,7 +21,7 @@ Nothing strange here.
 
 Now suppose we want to inherit this class and override the `Name` property.  We can't override it because it's not virtual.  So we just recreate the property in our class.
 
-```csharp
+```c#
 public class MyClass : ExistingClass
 {
 	public string Name { get; set; } // "Dog"
@@ -28,7 +30,7 @@ public class MyClass : ExistingClass
 
 Now Resharper (or the compiler) is complaining that we can't override this method and suggests that we put the `new` modifier on it.  Okay, sure.
 
-```csharp
+```c#
 public class MyClass : ExistingClass
 {
 	public new string Name { get; set; } // "Dog"
@@ -39,7 +41,7 @@ There.  No more whining.
 
 But it still behaves... oddly.
 
-```csharp
+```c#
 var myClass = new MyClass();
 var as3rdParty = (ExistingClass) myClass;
 
@@ -59,7 +61,7 @@ But just for fun, let's do it anyway.
 
 We're going to start by creating a static class with a static property.
 
-```csharp
+```c#
 class Program
 {
 	static void Main(string[] args)
@@ -78,7 +80,7 @@ So far nothing squirrelly.  We run the app, and we see "start" printed to the co
 
 Let's start by converting this from a static class to a singleton, but we'll leave `Value` static so that we don't break any existing code.
 
-```csharp
+```c#
 public class Test
 {
 	public static Test Instance { get; }
@@ -89,7 +91,7 @@ public class Test
 
 Then we get weird.  We're going to make this a partial class and declare a partial method.  While we're at it, we're going to break `Value` as an autoproperty and call the partial method on the instance before returning the backing field.
 
-```csharp
+```c#
 public partial class Test
 {
 	private string _value = "start";
@@ -111,7 +113,7 @@ public partial class Test
 
 Let's go through this.  When we call `Test.Value`, the property getter is then going to call `SetValue()` *if it exists* before returning the backing field.  If it *does not* exist, the compiler ignores the call as if it were never there!  This allows us to optionally create another part to this class that then defines `SetValue()` which has all the authority to set `_value`.
 
-```csharp
+```c#
 public partial class Test
 {
 	partial void SetValue()
