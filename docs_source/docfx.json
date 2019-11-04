@@ -4,19 +4,16 @@
     "content": [
       {
         "files": [
-          "usage/**.md",
-          "usage/**/toc.yml",
-          "examples/**.md",
-          "examples/**/toc.yml",
-          "toc.yml",
-          "*.md"
+          "../published/**.md",
+          "index.md"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "../published/resources/**"
         ]
       }
     ],
