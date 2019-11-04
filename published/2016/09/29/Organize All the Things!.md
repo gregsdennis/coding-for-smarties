@@ -2,7 +2,7 @@ I was on the train in to work this morning when an [article](http://www.makeuseo
 
 Which brought to mind the [mantra that Trello started with](http://blog.trello.com/launch/):
 
->Trello is probably the simplest thing in the world: it’s a web page where you make a bunch of lists.
+>Trello is probably the simplest thing in the world: it's a web page where you make a bunch of lists.
 
 That's it!  It's just a web app that allows you to organize stuff.
 

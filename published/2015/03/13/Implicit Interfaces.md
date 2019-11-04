@@ -1,6 +1,6 @@
 # Implicit Interfaces
 
-Today’s topic is based on a question I posted on StackOverflow some time ago. There were several workarounds, but in the end, I’d still like this added as a C# feature. Since posting the question, I’ve had some time to ponder the idea a bit more, and here’s my final suggestion.
+Today's topic is based on a question I posted on StackOverflow some time ago. There were several workarounds, but in the end, I'd still like this added as a C# feature. Since posting the question, I've had some time to ponder the idea a bit more, and here's my final suggestion.
 
 ## The Problem
 
@@ -20,7 +20,7 @@ interface IB
 }
 ```
 
-Now suppose you want to create a property on an object into which you can place an object of either type. Since they have no common ancestry, you would have three options (that I’ve seen, you may devise your own):
+Now suppose you want to create a property on an object into which you can place an object of either type. Since they have no common ancestry, you would have three options (that I've seen, you may devise your own):
 
 1. declare the property as object and then test/cast in order to access the functionality
     ```c#
@@ -104,7 +104,7 @@ Now suppose you want to create a property on an object into which you can place 
     }
     ```
 
-The second option is generally the more preferred option, however, it’s not always doable. What if, instead of `IA` and `IB`, we use `IComparable` and `IConvertible`?
+The second option is generally the more preferred option, however, it's not always doable. What if, instead of `IA` and `IB`, we use `IComparable` and `IConvertible`?
 
 ```c#
 interface ICombined : IComparable, IConvertible {}
@@ -178,15 +178,15 @@ Defining an interface this way, it becomes retroactive. That is, types which imp
 - An implicit interface may combine any number of interfaces.
 - An implicit interface may not define any additional functionality. That is, it must be empty.
 
-That’s really it.
+That's really it.
 
-Finally, the run-time will have to do some type checking, which it should do already for the is and as keywords. It wouldn’t need to know all implicit interfaces that a type implements, it would just need to check as requested.
+Finally, the run-time will have to do some type checking, which it should do already for the is and as keywords. It wouldn't need to know all implicit interfaces that a type implements, it would just need to check as requested.
 
 ```c#
 var implemented = 6 is ICombined;
 ```
 
-This basically asks, “Does the type of `6`, which is `int`, implement `ICombined`?” To determine that, it sees that `ICombined` is an implicit interface so it asks, “Does it implement all of the interfaces implmented by `ICombined`?” So it’s equivalent to writing:
+This basically asks, “Does the type of `6`, which is `int`, implement `ICombined`?” To determine that, it sees that `ICombined` is an implicit interface so it asks, “Does it implement all of the interfaces implmented by `ICombined`?” So it's equivalent to writing:
 
 ```c#
 var implemented = 6 is IConvertible && 6 is IComparable;
@@ -196,13 +196,13 @@ Simple field and property assignments would be compiler-verifiable.
 
 ## A Practical Example
 
-As with any framework, there are a few holes in WPF. `ObservableCollection<T>` is one of these. The class is coded in such a way that you can only access it (read and write) on the thread which it was created. I’m sure they had their reasons, but this has caused me issues in asynchronous applications.
+As with any framework, there are a few holes in WPF. `ObservableCollection<T>` is one of these. The class is coded in such a way that you can only access it (read and write) on the thread which it was created. I'm sure they had their reasons, but this has caused me issues in asynchronous applications.
 
-Suppose you want to show a screen, but the view model contains a collection of strings which may take some time to populate. Being the good MVVM developer you are, you decided to use `ObservableCollection<string>` to back the property. And wanting to ensure that the property is always a collection which notifies of any changes, you made that the property type as well. You also returned the view model with the collection empty and are populating it off of the UI thread so that your interface doesn’t freeze while loading the data because you know that’s really annoying for the user.
+Suppose you want to show a screen, but the view model contains a collection of strings which may take some time to populate. Being the good MVVM developer you are, you decided to use `ObservableCollection<string>` to back the property. And wanting to ensure that the property is always a collection which notifies of any changes, you made that the property type as well. You also returned the view model with the collection empty and are populating it off of the UI thread so that your interface doesn't freeze while loading the data because you know that's really annoying for the user.
 
-Now that you have your asynchronous solution all coded up to architectural perfection, you run the app and it crashes because the `ObservableCollection<string>` you used isn’t thread safe and editing it off of the UI thread (as is good practice) causes it to barf. Great. now you have to either load synchronously or develop your own thread-safe notifying collection. Fortunately for you, there are such collections available online.
+Now that you have your asynchronous solution all coded up to architectural perfection, you run the app and it crashes because the `ObservableCollection<string>` you used isn't thread safe and editing it off of the UI thread (as is good practice) causes it to barf. Great. now you have to either load synchronously or develop your own thread-safe notifying collection. Fortunately for you, there are such collections available online.
 
-So you have a problem. What type can you use for your property which implements `IEnumerable` and `INotifyCollectionChanged`? I’ll give you a hint: there isn’t a built-in abstraction type that does this. So you make one:
+So you have a problem. What type can you use for your property which implements `IEnumerable` and `INotifyCollectionChanged`? I'll give you a hint: there isn't a built-in abstraction type that does this. So you make one:
 
 ```c#
 public interface INotifyingEnumerable : IEnumerable, INotifyCollectionChanged {}
@@ -220,7 +220,7 @@ public class MyNotifyingEnumerable : INotifyingEnumerable
 }
 ```
 
-This sucks! You know that `FantasticDownloadedCollection` implements both of these interfaces. It’s stupid that you have to create a new class just to implement your custom interface. If only there were a way that the compiler could know that you just want any class which implements both interfaces!
+This sucks! You know that `FantasticDownloadedCollection` implements both of these interfaces. It's stupid that you have to create a new class just to implement your custom interface. If only there were a way that the compiler could know that you just want any class which implements both interfaces!
 
 Then you remember this blog post, and amazingly enough, the good people over at Microsoft read it, too. They have implemented implicit interfaces for people just like you. Now you can add a single keyword to your interface declaration
 
@@ -228,12 +228,12 @@ Then you remember this blog post, and amazingly enough, the good people over at 
 public implicit interface INotifyingEnumerable : IEnumerable, INotifyCollectionChanged {}
 ```
 
-and remove your custom class altogether. Qapla’!
+and remove your custom class altogether. Qapla'!
 
 ## A Final Take
 
-There is some debate as to whether empty interfaces should be allowed or have a place in applications. Usually they’re little more than marker interfaces. On occasion, they can be helpful with DI containers such as Castle.Windsor. Other than that, I think they’re fairly useless.
+There is some debate as to whether empty interfaces should be allowed or have a place in applications. Usually they're little more than marker interfaces. On occasion, they can be helpful with DI containers such as Castle.Windsor. Other than that, I think they're fairly useless.
 
 This feature proposal gives true purpose and utility to empty interfaces.
 
-Next time, I’ll respond to a post which suggested a coding practice that made me cringe.
+Next time, I'll respond to a post which suggested a coding practice that made me cringe.
