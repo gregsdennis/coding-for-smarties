@@ -1,192 +1,221 @@
-- uid: Posts
-  name: Posts
+- name: 2019
   items:
-  - uid: 2015
-    name: 2015
+  - name: 01
     items:
-    - uid: 2015-04
-      name: April
-      items: 
-      - uid: filling-the-void
-        name: Filling the Void
-        href: 2015/03/04/Filling the Void.md
-    - uid: 2015-05
-      name: May
-      items: 
-    - uid: 2015-06
-      name: June
-      items: 
-    - uid: 2015-07
-      name: July
-      items: 
-    - uid: 2015-08
-      name: August
-      items: 
-    - uid: 2015-09
-      name: September
-      items: 
-    - uid: 2015-10
-      name: October
-      items: 
-    - uid: 2015-11
-      name: November
-      items: 
-    - uid: 2015-12
-      name: December
-      items: 
-  - uid: 2016
-    name: 2016
+    - name: 13
+      items:
+      - name: 'Self-Registering APIs – Part 2: Authentication API, Registering Other Services, and Service Discovery'
+        href: ./2019/01/13/self-registering-apis-2.md
+    - name: 09
+      items:
+      - name: 'Self-Registering APIs – Part 1: An Overview'
+        href: ./2019/01/09/self-registering-apis-1.md
+- name: 2018
+  items:
+  - name: 02
     items:
-    - uid: 2016-01
-      name: January
-      items: 
-    - uid: 2016-02
-      name: February
-      items: 
-    - uid: 2016-03
-      name: March
-      items: 
-    - uid: 2016-04
-      name: April
-      items: 
-    - uid: 2016-05
-      name: May
-      items: 
-    - uid: 2016-06
-      name: June
-      items: 
-    - uid: 2016-07
-      name: July
-      items: 
-    - uid: 2016-08
-      name: August
-      items: 
-    - uid: 2016-09
-      name: September
-      items: 
-    - uid: 2016-10
-      name: October
-      items: 
-    - uid: 2016-11
-      name: November
-      items: 
-    - uid: 2016-12
-      name: December
-      items: 
-  - uid: 2017
-    name: 2017
+    - name: 20
+      items:
+      - name: 'Overriding Static Members in C#'
+        href: ./2018/02/20/overriding-static-members-in-c-sharp.md
+- name: 2017
+  items:
+  - name: 06
     items:
-    - uid: 2017-01
-      name: January
-      items: 
-    - uid: 2017-02
-      name: February
-      items: 
-    - uid: 2017-03
-      name: March
-      items: 
-    - uid: 2017-04
-      name: April
-      items: 
-    - uid: 2017-05
-      name: May
-      items: 
-    - uid: 2017-06
-      name: June
-      items: 
-    - uid: 2017-07
-      name: July
-      items: 
-    - uid: 2017-08
-      name: August
-      items: 
-    - uid: 2017-09
-      name: September
-      items: 
-    - uid: 2017-10
-      name: October
-      items: 
-    - uid: 2017-11
-      name: November
-      items: 
-    - uid: 2017-12
-      name: December
-      items: 
-  - uid: 2018
-    name: 2018
+    - name: 21
+      items:
+      - name: 'Lord of the Converters'
+        href: ./2017/06/21/lord-of-the-converters.md
+    - name: 20
+      items:
+      - name: 'A Brief Start with UWP'
+        href: ./2017/06/20/a-brief-start-with-uwp.md
+    - name: 06
+      items:
+      - name: 'Extreme DRYness'
+        href: ./2017/06/06/extreme-dryness.md
+  - name: 04
     items:
-    - uid: 2018-01
-      name: January
-      items: 
-    - uid: 2018-02
-      name: February
-      items: 
-    - uid: 2018-03
-      name: March
-      items: 
-    - uid: 2018-04
-      name: April
-      items: 
-    - uid: 2018-05
-      name: May
-      items: 
-    - uid: 2018-06
-      name: June
-      items: 
-    - uid: 2018-07
-      name: July
-      items: 
-    - uid: 2018-08
-      name: August
-      items: 
-    - uid: 2018-09
-      name: September
-      items: 
-    - uid: 2018-10
-      name: October
-      items: 
-    - uid: 2018-11
-      name: November
-      items: 
-    - uid: 2018-12
-      name: December
-      items: 
-  - uid: 2019
-    name: 2019
+    - name: 28
+      items:
+      - name: 'Local Functions, At It Again'
+        href: ./2017/04/28/lcoal-functions-at-it-again.md
+    - name: 05
+      items:
+      - name: 'C# 7 Features I Don''t Like'
+        href: ./2017/04/05/c-sharp-7-features-i-dont-like.md
+    - name: 03
+      items:
+      - name: 'Breaking Changes'
+        href: ./2017/04/03/breaking-changes.md
+  - name: 03
     items:
-    - uid: 2019-01
-      name: January
-      items: 
-    - uid: 2019-02
-      name: February
-      items: 
-    - uid: 2019-03
-      name: March
-      items: 
-    - uid: 2019-04
-      name: April
-      items: 
-    - uid: 2019-05
-      name: May
-      items: 
-    - uid: 2019-06
-      name: June
-      items: 
-    - uid: 2019-07
-      name: July
-      items: 
-    - uid: 2019-08
-      name: August
-      items: 
-    - uid: 2019-09
-      name: September
-      items: 
-    - uid: 2019-10
-      name: October
-      items: 
-    - uid: 2019-11
-      name: November
-      items: 
-    - uid: 2019-12
-      name: December
-      items: 
+    - name: 25
+      items:
+      - name: 'They Think of Everything!'
+        href: ./2017/03/25/they-think-of-everything.md
+  - name: 02
+    items:
+    - name: 07
+      items:
+      - name: 'Eliminating Hard Dependencies'
+        href: ./2017/02/07/eliminating-hard-dependencies.md
+  - name: 01
+    items:
+    - name: 14
+      items:
+      - name: 'The Importance of Error Messaging'
+        href: ./2017/01/14/the-importance-of-error-messaging.md
+- name: 2016
+  items:
+  - name: 12
+    items:
+    - name: 21
+      items:
+      - name: 'Reinventing the Wheel'
+        href: ./2016/12/21/reinventing-the-wheel.md
+  - name: 09
+    items:
+    - name: 29
+      items:
+      - name: 'Organize All the Things'
+        href: ./2016/09/29/organize-all-the-things.md
+    - name: 13
+      items:
+      - name: 'Hide Your Secrets'
+        href: ./2016/09/13/hide-your-secrets.md
+    - name: 08
+      items:
+      - name: 'The Disparity between APIs and SDKs'
+        href: ./2016/09/08/1-apis-and-sdks.md
+      - name: 'The Case Against Private Methods'
+        href: ./2016/09/08/2-the-case-against-private-methods.md
+  - name: 06
+    items:
+    - name: 31
+      items:
+      - name: 'A New Adventure'
+        href: ./2016/06/31/a-new-adventure.md
+    - name: 14
+      items:
+      - name: 'The Cup will be with You.  Always.'
+        href: ./2016/06/14/the-cup-will-be-with-you-always.md
+    - name: 09
+      items:
+      - name: 'An Interface by Any Other Name'
+        href: ./2016/06/09/an-interface-by-any-other-name.md
+  - name: 05
+    items:
+    - name: 29
+      items:
+      - name: 'Handling Errors from Plugins'
+        href: ./2016/05/29/plugins-2.md
+  - name: 04
+    items:
+    - name: 21
+      items:
+      - name: 'A Plugin Primer'
+        href: ./2016/04/21/plugins-1.md
+  - name: 01
+    items:
+    - name: 21
+      items:
+      - name: 'How to Version Assemblies Destined for Nuget'
+        href: ./2016/01/21/how-to-version-assemblies-destined-for-nuget.md
+- name: 2015
+  items:
+  - name: 12
+    items:
+    - name: 17
+      items:
+      - name: 'Architecture Always Applies'
+        href: ./2015/12/17/architecture-always-applies.md
+  - name: 11
+    items:
+    - name: 28
+      items:
+      - name: 'SRP (where available)'
+        href: ./2015/11/28/srp-where-available.md
+    - name: 17
+      items:
+      - name: 'WPF Miller Columns, Part 2'
+        href: ./2015/11/17/wpf-miller-columns-2.md
+    - name: 14
+      items:
+      - name: 'WPF Miller Columns, Part 1'
+        href: ./2015/11/14/wpf-miller-columns-1.md
+  - name: 10
+    items:
+    - name: 24
+      items:
+      - name: 'Microsoft Did It Wrong'
+        href: ./2015/10/24/microsoft-did-it-wrong.md
+  - name: 09
+    items:
+    - name: 19
+      items:
+      - name: 'WPF Animations and the Async/Await Model'
+        href: ./2015/09/19/wpf-animations-and-the-async-await-model.md
+    - name: 16
+      items:
+      - name: 'The Art of Coding'
+        href: ./2015/09/16/the-art-of-coding.md
+  - name: 08
+    items:
+    - name: 20
+      items:
+      - name: 'The Mother of Copy/Paste Errors'
+        href: ./2015/08/20/the-mother-of-copy-paste-errors.md
+    - name: 06
+      items:
+      - name: 'Manatee.Json (Part... Oops!'
+        href: ./2015/08/06/manatee-json-4.md
+  - name: 07
+    items:
+    - name: 13
+      items:
+      - name: 'Manatee.Json (Part 3: User-Defined Serialization)'
+        href: ./2015/07/13/1-manatee-json-3.md
+      - name: 'Goodbye, Daley. You will be missed.'
+        href: ./2015/07/13/2-goodbye-daley-you-will-be-missed.md
+  - name: 06
+    items:
+    - name: 17
+      items:
+      - name: 'Manatee.Json (Part 2: Parsing)'
+        href: ./2015/06/17/manatee-json-2.md
+  - name: 05
+    items:
+    - name: 31
+      items:
+      - name: 'An Introduction to Manateee.Json (Part 1: Object Model)'
+        href: ./2015/05/31/manatee-json-1.md
+  - name: 04
+    items:
+    - name: 21
+      items:
+      - name: 'C# 6 Features I Don''t Like'
+        href: ./2015/04/21/c-sharp-6-features-i-dont-like.md
+    - name: 11
+      items:
+      - name: 'The Case Against Static Classes'
+        href: ./2015/04/11/the-case-against-static-classes.md
+  - name: 03
+    items:
+    - name: 28
+      items:
+      - name: 'Static WPF Converters'
+        href: ./2015/03/28/static-wpf-converters.md
+    - name: 22
+      items:
+      - name: 'Nulls and Extension Methods'
+        href: ./2015/03/22/nulls-and-extension-methods.md
+    - name: 13
+      items:
+      - name: 'Implicit Interfaces'
+        href: ./2015/03/13/implicit-interfaces.md
+    - name: 04
+      items:
+      - name: 'Filling the Void'
+        href: ./2015/03/04/filling-the-void.md
+

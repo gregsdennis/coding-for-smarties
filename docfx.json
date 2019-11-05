@@ -5,6 +5,7 @@
       {
         "files": [
           "published/**.md",
+          "published/**.yml",
           "index.md",
           "toc.yml"
         ]
