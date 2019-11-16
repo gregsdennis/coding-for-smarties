@@ -5,8 +5,6 @@ date:   2015-11-28 17:00:00 +1300
 categories: deep-thoughts
 excerpt_separator: <!--more-->
 ---
-# SRP (where available)
-
 I was watching WALL-E with my children the other day... Okay, I'll be honest. I put on WALL-E for my children the other day, then watched it with my wife while both of our kids ran around the house all crazy-like. Anyway, the movie was on, and the final scene struck a chord with me. It shows a shot of the earth with a hazy cloud of satellites surrounding it.
 
 <!--more-->
