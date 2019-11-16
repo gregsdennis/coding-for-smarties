@@ -24,7 +24,7 @@ github_username: gregsdennis
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-so-simple
+theme: cayman
 plugins:
   - jekyll-feed
 
