@@ -41,3 +41,4 @@ exclude:
 #   - vendor/ruby/
   - Dockerfile
   - README.md
+  - draft/
