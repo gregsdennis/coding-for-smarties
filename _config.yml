@@ -24,7 +24,8 @@ github_username: gregsdennis
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
+theme: jekyll-theme-cayman-blog
 plugins:
   - jekyll-feed
 
@@ -41,4 +42,5 @@ exclude:
 #   - vendor/ruby/
   - Dockerfile
   - README.md
+  - run.bat
   - draft/
