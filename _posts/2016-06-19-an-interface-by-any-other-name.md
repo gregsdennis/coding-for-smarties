@@ -2,7 +2,7 @@
 layout: post
 title:  "An Interface by Any Other Name"
 date:   2016-06-19 17:00:00 +1300
-categories: c# language code deep-thoughts
+tags: c# language code deep-thoughts
 excerpt_separator: <!--more-->
 ---
 We're going to take a brief break from our series on plug-ins to explore an idea that I had regarding naming conventions, specifically interface naming in .Net.

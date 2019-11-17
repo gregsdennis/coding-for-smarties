@@ -2,7 +2,7 @@
 layout: post
 title:  "Organize All the Things"
 date:   2016-09-29 17:00:00 +1300
-categories: trello rant
+tags: trello rant
 excerpt_separator: <!--more-->
 ---
 I was on the train in to work this morning when an [article](http://www.makeuseof.com/tag/goodbye-trello-5-alternative-free-kanban-board-tools/) came across my Google feed.  The article is just one of many over the past few years that talk about task management tools and why Trello is inadequate, and decided that I'm tired of Trello being lumped in with apps that are specifically designed around application development and team/task management.

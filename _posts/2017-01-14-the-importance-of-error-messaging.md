@@ -2,7 +2,7 @@
 layout: post
 title:  "The Importance of Error Messaging"
 date:   2017-01-14 17:00:00 +1300
-categories: rant customer-service
+tags: rant customer-service
 excerpt_separator: <!--more-->
 ---
 When I was young, taking my first class in computer science, my mother told me about her experiences with computer programming coming through college in the late 70s.

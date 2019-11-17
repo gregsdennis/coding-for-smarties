@@ -2,7 +2,7 @@
 layout: post
 title:  "Self-Registering APIs – Part 1: An Overview"
 date:   2019-01-09 17:00:00 +1300
-categories: c# api architecture microservice
+tags: c# api architecture microservice
 excerpt_separator: <!--more-->
 ---
 Several months ago, I started working on a new desktop application project that was to be backed by an microservice ecosystem. I ended up designing an API where the only well-known service is the one that handles authentication, and all other services register themselves with the authentication API and only access each other via service discovery. This yields extensibility: a new service doesn't need to be explicitly set up in the ecosystem; just add it and go.

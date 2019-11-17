@@ -2,7 +2,7 @@
 layout: post
 title:  "The Case Against Static Classes"
 date:   2015-04-11 17:00:00 +1300
-categories: c# language architecture coding
+tags: c# language architecture coding
 excerpt_separator: <!--more-->
 ---
 Static classes cannot be instantiated. That means they serve only serve one purpose: providing data and functionality to all areas of an application. They are a close relative to the [evil global variable](http://c2.com/cgi/wiki?GlobalVariablesAreBad).

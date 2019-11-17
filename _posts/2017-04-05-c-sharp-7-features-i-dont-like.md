@@ -2,7 +2,7 @@
 layout: post
 title:  "C# 7 Features I Don't Like"
 date:   2017-04-05 17:00:00 +1300
-categories: c# language rant
+tags: c# language rant
 excerpt_separator: <!--more-->
 ---
 It's that time again!  Time for my inner grumpy old man to come out and describe all that is wrong with the development of C# as a language!

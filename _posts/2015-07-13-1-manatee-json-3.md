@@ -2,7 +2,7 @@
 layout: post
 title:  "Manatee.Json (Part 3: User-Defined Serialization)"
 date:   2015-07-13 16:00:00 +1300
-categories: c# json serialization
+tags: c# json serialization
 excerpt_separator: <!--more-->
 ---
 In the past couple posts, we've looked at JSON as a language, how to represent it in code, and how to translate between JSON in a string and our object model. Now, let's take a look at how we can make JSON work for us.

@@ -2,7 +2,7 @@
 layout: post
 title:  "WPF Animations and the Async/Await Model"
 date:   2015-09-19 17:00:00 +1300
-categories: c# wpf threading
+tags: c# wpf threading
 excerpt_separator: <!--more-->
 ---
 I recently encountered this little gotcha at work, and thought it could benefit others, so... here you go.

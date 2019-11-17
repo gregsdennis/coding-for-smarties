@@ -2,7 +2,7 @@
 layout: post
 title:  "Microsoft Did It Wrong"
 date:   2015-10-24 17:00:00 +1300
-categories: architecture nuget package
+tags: architecture nuget package
 excerpt_separator: <!--more-->
 ---
 It's been several years since Microsoft announced that Newtonsoft's Json.<span></span>Net would be the default JSON serializer. If you deal with JSON communication over the web at all, you probably already know this. It's not exactly news.

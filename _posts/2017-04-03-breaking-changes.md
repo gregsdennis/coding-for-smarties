@@ -2,7 +2,7 @@
 layout: post
 title:  "Breaking Changes"
 date:   2017-04-03 17:00:00 +1300
-categories: nuget package version
+tags: nuget package version
 excerpt_separator: <!--more-->
 ---
 Today we're going to talk about breaking changes in libraries.  Specifically, we're going to answer the following:

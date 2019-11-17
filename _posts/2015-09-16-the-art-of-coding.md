@@ -2,7 +2,7 @@
 layout: post
 title:  "The Art of Coding"
 date:   2015-09-16 17:00:00 +1300
-categories: deep-thoughts
+tags: deep-thoughts
 excerpt_separator: <!--more-->
 ---
 We often hear about a turning a field from an art into a science, but we rarely (if ever) hear about turning a science into an art. I assure you it's there, and I assert that one without the other is usually a horrible thing.

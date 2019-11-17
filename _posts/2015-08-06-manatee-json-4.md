@@ -2,7 +2,7 @@
 layout: post
 title:  "Manatee.Json (Part... Oops!"
 date:   2015-08-06 17:00:00 +1300
-categories: c# json
+tags: c# json
 excerpt_separator: <!--more-->
 ---
 The last time we looked at code, we covered user-defined serialization between data models and JSON. Today, we would have reviewed auto-serialization, but I've hit a snag. I recently did some performance testing, and found that Manatee.Json was quite slower than its nemesis, Newtonsoft.Json (or more familiarly, Json.<span></span>Net).

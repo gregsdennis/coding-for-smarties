@@ -2,7 +2,7 @@
 layout: post
 title:  "They Think of Everything!"
 date:   2017-03-25 17:00:00 +1300
-categories: c# language rave
+tags: c# language rave
 ---
 Ordinarily I like to pontificate on the merits (or detriments) of particular code design decisions.  Instead today, I'd like to share a neat consequence of C# 6 that I found the other day.
 

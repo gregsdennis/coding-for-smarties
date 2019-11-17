@@ -2,7 +2,7 @@
 layout: post
 title:  "C# 8 Features I Don't Hate"
 date:   2019-11-20 17:00:00 +1300
-categories: c# language rave
+tags: c# language rave
 excerpt_separator: <!--more-->
 ---
 I expect my readers are wondering where my continuation of the *C# x Features I Don't Like* series is for version 8.  Well, I'm sorry to disappoint, but I won't be continuing that.  I'm trying to make a change and be less grumpy about things.  I consider it growth.  Deal with it.

@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Version Assemblies Destined for Nuget"
 date:   2016-01-21 17:00:00 +1300
-categories: nuget package version
+tags: nuget package version
 excerpt_separator: <!--more-->
 ---
 Okay. Seriously. Versioning of third-party Nuget packages has been the bane of my existence for the past week. Nuget declares that packages under its system should follow Sematic Versioning, and that's great... for the package. But it becomes a problem when the same versioning scheme is followed for the assembly.

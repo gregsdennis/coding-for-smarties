@@ -2,7 +2,7 @@
 layout: post
 title:  "Hide Your Secrets"
 date:   2016-09-13 17:00:00 +1300
-categories: c# code
+tags: c# code
 excerpt_separator: <!--more-->
 ---
 In the last post we discussed why it could be preferred to expose all of your methods publicly.  However, I deliberately left something out.  Some of you may have noticed.

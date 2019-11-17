@@ -2,7 +2,7 @@
 layout: post
 title:  "Goodbye, Daley. You will be missed."
 date:   2015-07-13 17:00:00 +1300
-categories: dallas-stars just-me
+tags: dallas-stars just-me
 excerpt_separator: <!--more-->
 ---
 We need to take a break from code for a moment to discuss another important matter. I'm going to do my best to make this not sound like an obituary, but in some ways, it feels like it should be.
@@ -19,7 +19,7 @@ Over the next couple years, I could see that his offensive push diminished a bit
 
 Through the next seven or so seasons, the various coaches reorganized the team to be more defensively-minded as a whole, instilling a mindset that said, “You're a defenseman. You shouldn't be trying to score. You should be keeping the other team from scoring.” While that strategy works well for many teams, Daley's style didn't seem to fit in. Even so, he played the part; he did as he was told. As a result, he received a lot of criticism stating that his defensive play just wasn't up to par and that he was actually a detriment to the team. I was just convinced he was being asked to play in a way that didn't work well for him, much like Mike Ribiero's stint with the Phoenix (now Arizona) Coyotes. It was during these years which I expected him to leave the team or be traded. I continued to support and defend him on various forums and the Stars Facebook page when the “fans” started hounding him. In 2008, I purchased his jersey: authentic, not replica. I finally got it signed at the end of the 2010-11 season. I was proud to wear it, and I proclaimed Daley's unseen greatness.
 
-![Stars Jersey]()
+![Stars Jersey](../../../images/image0500.jpg)
 
 This is my Jersey, but the image didn't load for some reson. All you see is text.
 

@@ -4,15 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I have officially been a professional developer since late 2012. I’m currently working in Auckland, New Zealand with a company called Pushpay. At Pushpay, we provide giving and community apps and services for charitable organizations, like churches.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Previously, I worked for Intergen, a consulting firm here in Auckland, where I created turnkey custom software solutions for other businesses, and GameStop, located in Grapevine, TX, where I built software for the point of sale (POS) running in each and every store globally.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Prior to software development, I was in the world of aerospace manufacturing. I found myself at a couple companies right when they were going through a major reorganization to become more efficient via the power of Lean Manufacturing. I learned a lot about waste during those years, and every day I endeavor to apply that knowledge to the software I write. I find it fascinating how much the two parallel each other.

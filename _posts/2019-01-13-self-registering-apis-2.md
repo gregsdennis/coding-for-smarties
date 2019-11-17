@@ -2,7 +2,7 @@
 layout: post
 title:  "Self-Registering APIs – Part 2: Authentication API, Registering Other Services, and Service Discovery"
 date:   2019-01-13 17:00:00 +1300
-categories: c# api architecture microservice
+tags: c# api architecture microservice
 excerpt_separator: <!--more-->
 ---
 Today, I'll be continuing the tour of my self-registering API architecture by taking a look at the authentication API and the mechanics of how a service registers itself. This will be a more practical dive than the previous post's theory-heavy chit-chat.

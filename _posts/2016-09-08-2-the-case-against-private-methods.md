@@ -2,7 +2,7 @@
 layout: post
 title:  "The Case Against Private Methods"
 date:   2016-09-08 17:00:00 +1300
-categories: c# code
+tags: c# code
 excerpt_separator: <!--more-->
 ---
 Yeah.  This post is titled that.

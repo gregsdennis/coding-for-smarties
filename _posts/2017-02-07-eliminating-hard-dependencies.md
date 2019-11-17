@@ -2,7 +2,7 @@
 layout: post
 title:  "Eliminating Hard Dependencies"
 date:   2017-02-07 17:00:00 +1300
-categories: nuget package version
+tags: nuget package version
 excerpt_separator: <!--more-->
 ---
 You found it!  After many hours of scouring the internet, you've finally discovered the library that does precisely what you need.  Except... it has a dependency... on a package that your architect has declared unfit for your company. Your options are:

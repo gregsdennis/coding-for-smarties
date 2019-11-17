@@ -2,7 +2,7 @@
 layout: post
 title:  "Overriding Static Members in C#"
 date:   2018-02-20 17:00:00 +1300
-categories: c# language deep-thoughts
+tags: c# language deep-thoughts
 excerpt_separator: <!--more-->
 ---
 Yeah, you read that right.  We're gonna break some rules!

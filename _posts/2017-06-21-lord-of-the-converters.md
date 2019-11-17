@@ -2,7 +2,7 @@
 layout: post
 title:  "Lord of the Converters"
 date:   2017-06-21 17:00:00 +1300
-categories: c# wpf
+tags: c# wpf
 excerpt_separator: <!--more-->
 ---
 > ...One Converter to bring them all and in the XAML bind them...

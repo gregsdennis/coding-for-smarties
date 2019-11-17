@@ -2,7 +2,7 @@
 layout: post
 title:  "Extreme DRYness"
 date:   2017-06-06 17:00:00 +1300
-categories: architecture
+tags: architecture
 excerpt_separator: <!--more-->
 ---
 I ran across an interesting scenario at work today that I think merits some discussion.  In this post, I'll cover what DRY is, and when following it religiously may actually cause problems.

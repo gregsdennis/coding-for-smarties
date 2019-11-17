@@ -2,7 +2,7 @@
 layout: post
 title:  "Implicit Interfaces"
 date:   2015-03-13 17:00:00 +1300
-categories: c# language deep-thoughts
+tags: c# language deep-thoughts
 excerpt_separator: <!--more-->
 ---
 Today's topic is based on a question I posted on StackOverflow some time ago. There were several workarounds, but in the end, I'd still like this added as a C# feature. Since posting the question, I've had some time to ponder the idea a bit more, and here's my final suggestion.

@@ -2,7 +2,7 @@
 layout: post
 title:  "The Cup will be with You.  Always."
 date:   2016-06-14 17:00:00 +1300
-categories: dallas-stars just-me
+tags: dallas-stars just-me
 excerpt_separator: <!--more-->
 ---
 Well, well, well.  Look who just won the Stanley Cup!  Let's take a look at the journey that brought us here.

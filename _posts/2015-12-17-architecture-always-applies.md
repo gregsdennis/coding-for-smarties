@@ -2,7 +2,7 @@
 layout: post
 title:  "Architecture Always Applies"
 date:   2015-12-17 17:00:00 +1300
-categories: c# architecture deep-thoughts
+tags: c# architecture deep-thoughts
 excerpt_separator: <!--more-->
 ---
 I recently ran into an issue with Nuget packages. At work, we have a private Nuget repository for code that we'd like to share across applications. It's mostly common frameworks, like configuration and logging.

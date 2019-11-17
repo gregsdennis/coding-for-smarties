@@ -2,7 +2,7 @@
 layout: post
 title:  "Nulls and Extension Methods"
 date:   2015-03-22 17:00:00 +1300
-categories: c# coding
+tags: c# coding
 excerpt_separator: <!--more-->
 ---
 I recently came across this blog post in which the author provides a tip on how extension methods can be used, suggesting that they can be safely used on null objects. While his suggestion is valid, I cringed at the idea because it severely hampers code readability.

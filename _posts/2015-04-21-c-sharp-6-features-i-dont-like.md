@@ -2,7 +2,7 @@
 layout: post
 title:  "C# 6 Features I Don't Like"
 date:   2015-04-21 17:00:00 +1300
-categories: c# language rant
+tags: c# language rant
 excerpt_separator: <!--more-->
 ---
 There have been many posts on the [features of C# 6](https://roslyn.codeplex.com/wikipage?title=Language%20Feature%20Status&referringTitle=Documentation). Probably the most thorough (however now a bit dated) I've seen is [this one](https://msdn.microsoft.com/en-us/magazine/dn802602.aspx).

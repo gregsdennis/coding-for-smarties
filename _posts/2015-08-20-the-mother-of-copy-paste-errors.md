@@ -2,7 +2,7 @@
 layout: post
 title:  "The Mother of Copy/Paste Errors"
 date:   2015-08-20 17:00:00 +1300
-categories: update
+tags: update
 excerpt_separator: <!--more-->
 ---
 Sometimes, when we're building an application, we need to run a script either before or after the build process. Fortunately, Microsoft took this need into consideration when they built Visual Studio. There, in the project properties, under Build (Compile if your one of those weird VBers), you have two multiline text boxes in which you can write your scripts: one for pre-build, and one for post-build. They even give you a button which opens a window with a scrollbar for when your script is more than three lines long. But still, something seems to be off with it. And this “something” is the primary cause of (read: what I'm blaming for) my latest computer panic/fiasco.
@@ -22,7 +22,7 @@ As part of my solution, alongside the main application and other projects, I mad
 
 So I copied the script and modified the folder names for the new POC app. Because I'm so efficient, I edited the folder at the first entry in the script, copied it, and pasted it into the other entries. After all was said and done, this is what it looked like.
 
-![Visual Studio Text Editor]()
+![Visual Studio Text Editor](../../../images/build-script.png)
 
 *Awesome. Now build. For some reason, my other instance of Visual Studio just crashed. Odd, but not too concerning. Hang on, the build is stuck. Ctrl+C to halt it. Now other applications are having problems. Maybe something just went haywire on my box. I'll just restart and see if that fixes it.*
 

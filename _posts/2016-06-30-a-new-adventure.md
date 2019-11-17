@@ -2,7 +2,7 @@
 layout: post
 title:  "A New Adventure"
 date:   2016-06-30 17:00:00 +1300
-categories: just-me
+tags: just-me
 excerpt_separator: <!--more-->
 ---
 I'd like to apologize to my readers for my recent absence.  I have been in the midst of a rather large move.  As soon as we're settled, I'll continue the series on plugins.
@@ -23,7 +23,7 @@ I began to research multi-layer LCD displays and found that one company, based i
 
 Sadly, the idea didn't pan out.  There were several issues with the approach which I won't go into here.  But I did get to stay in Auckland for a week, and I flew on the Boeing 777 (one from the bucket list)!
 
-![777 in front of a 747]()
+![777 in front of a 747](../../../images/0128111721-00.jpg)
 
 ### A dream is born
 

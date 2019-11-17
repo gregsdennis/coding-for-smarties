@@ -2,7 +2,7 @@
 layout: post
 title:  "A Brief Start with UWP"
 date:   2017-02-20 17:00:00 +1300
-categories: c# uwp wpf
+tags: c# uwp wpf
 excerpt_separator: <!--more-->
 ---
 At work I was recently assigned to a UWP app.  This post chronicles my discoveries over the first couple days.

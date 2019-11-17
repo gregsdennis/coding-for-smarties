@@ -2,7 +2,7 @@
 layout: post
 title:  "WPF Miller Columns, Part 1"
 date:   2015-11-14 17:00:00 +1300
-categories: c# wpf
+tags: c# wpf
 excerpt_separator: <!--more-->
 ---
 Today we're going to look at a very useful UI element: [Miller Columns](https://en.wikipedia.org/wiki/Miller_columns). If you've ever worked in a Mac environment, you'll probably recognize this from the [Finder's column view](https://www.google.com/search?q=finder+column+view&safe=active&espv=2&biw=1920&bih=955&source=lnms&tbm=isch&sa=X&ved=0CAYQ_AUoAWoVChMIutnoqPeQyQIVjCsmCh2Wgwzr). In fact, Apple likes to use this mechanism throughout their operating system and within various applications. But we rarely see them (if ever) in a Windows environment. (Why is that?!)

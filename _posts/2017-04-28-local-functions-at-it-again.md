@@ -2,7 +2,7 @@
 layout: post
 title:  "Local Functions, At It Again"
 date:   2017-04-28 17:00:00 +1300
-categories: c# language rant
+tags: c# language rant
 excerpt_separator: <!--more-->
 ---
 I thought I got out everything during [my rant about the new C# features](https://codingforsmarties.wordpress.com/2017/04/05/c-7-features-i-dont-like/), but apparently I missed something...

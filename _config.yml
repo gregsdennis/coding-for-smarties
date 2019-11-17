@@ -1,5 +1,5 @@
 title: Coding for Smarties
-description: Coding musings for the seasoned developer amongst other things
+description: Coding musings for the seasoned developer, amongst other things
 show_downloads: false
 
 baseurl: "/coding-for-smarties" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
@@ -26,7 +26,7 @@ plugins:
 target-blank:
     rel: nofollow
 
-header_page_refs: ['now', 'about', 'contact']
+header_page_refs: ['about', 'contact']
 
 exclude:
   - README.md

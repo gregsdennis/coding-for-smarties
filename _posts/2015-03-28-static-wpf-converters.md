@@ -2,7 +2,7 @@
 layout: post
 title:  "Static WPF Converters"
 date:   2015-03-28 17:00:00 +1300
-categories: c# wpf
+tags: c# wpf
 excerpt_separator: <!--more-->
 ---
 Most sites and books that teach WPF will tell you to declare all of your converters in XAML and then reference them using the `StaticResource` markup extension. I disagree. Unless you're super-careful about it, you'll end up creating mutliple instances of various converters.

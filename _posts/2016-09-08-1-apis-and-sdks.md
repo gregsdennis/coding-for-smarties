@@ -2,7 +2,7 @@
 layout: post
 title:  "The Disparity between APIs and SDKs"
 date:   2016-09-08 16:00:00 +1300
-categories: software deep-thoughts
+tags: software deep-thoughts
 excerpt_separator: <!--more-->
 ---
 I think it's time for us all to accept the truth:  I'm abandoning the plugin series.  I had a functioning proof of concept at my previous job, but I didn't think to grab it when I left and moved halfway around the world, and I don't feel like trying to recreate it right now.  Maybe I'll come back to it someday.  Instead, today we're going to talk about APIs and why there are so few SDKs to consume them.

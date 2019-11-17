@@ -2,7 +2,7 @@
 layout: post
 title:  "WPF Miller Columns, Part 2"
 date:   2015-11-17 17:00:00 +1300
-categories: c# wpf
+tags: c# wpf
 excerpt_separator: <!--more-->
 ---
 Last time, I walked through an implementation of Miller Columns in WPF that I had posted on StackOverflow, but it ended with a few issues.

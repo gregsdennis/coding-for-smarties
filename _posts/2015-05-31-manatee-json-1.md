@@ -2,7 +2,7 @@
 layout: post
 title:  "An Introduction to Manateee.Json (Part 1: Object Model)"
 date:   2015-05-31 17:00:00 +1300
-categories: c# json architecture nuget
+tags: c# json architecture nuget
 excerpt_separator: <!--more-->
 ---
 Today we're going to start in on my open source JSON library, [Manatee.Json](https://bitbucket.org/gregsdennis/manatee.json). In this post, we'll quickly review JSON as a language and build an object model.

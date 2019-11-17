@@ -2,7 +2,7 @@
 layout: post
 title:  "Reinventing the Wheel"
 date:   2016-12-21 17:00:00 +1300
-categories: c# wpf
+tags: c# wpf
 excerpt_separator: <!--more-->
 ---
 It's an age-old question that just about every WPF developer has asked:  How can I bind an event to a command?
