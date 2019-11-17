@@ -4,5 +4,4 @@
 
 layout: home
 ---
-
-This is my main page.
+Welcome to my blog.  I made it just for you.
