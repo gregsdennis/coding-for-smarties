@@ -50,7 +50,7 @@ I *may* use it, but I'll have to try it out to get a feel for it before I really
 
 I'm not really a fan of this.  I can see the utility, but I think it's counter to what an interface is.  It's blurring the line between an interface and an abstract class.
 
-That said, one neat benefit is that you can now add members to an interface without it being a breaking change.  See my post on [breaking changes](https://codingforsmarties.wordpress.com/2017/04/02/breaking-changes/) for why *adding* a member to an interface would be breaking.)
+That said, one neat benefit is that you can now add members to an interface without it being a breaking change.  (See [my post on breaking changes](../../../2017/04/03/breaking-changes.html) for why *adding* a member to an interface would be breaking.)
 
 I'll probably not use this personally, but it may someday solve a problem at work.
 
@@ -64,7 +64,7 @@ This also enables switch statements in expression-bodied members.  Yuck.  I wond
 
 #### Property patterns
 
-This extends switch expressions so that they can key off of more complex objects based on property values.  The example in the Microsoft article shows it being used with a single proeprty match, but it *may* work with multiple properties.  This seems niche but useful.
+This extends switch expressions so that they can key off of more complex objects based on property values.  The example in the Microsoft article shows it being used with a single property match, but it *may* work with multiple properties.  This seems niche but useful.
 
 #### Tuple patterns
 
@@ -100,7 +100,7 @@ This allows these structs to be disposed by (I guess reflectively) checking if t
 
 *[Inhales deeply in an effort to subdue the rage]*
 
-This one has everyone excited, and I can't figure out why.  It flies in the face of one of the basic premises of .Net: there are value types, which are stored on the stack, and reference types, which are stored on the heap.  (It's a staple interview question!)  Because they live on the stack, value types are non-nullable.  To make one nullable, there is the `Nullable<T>` class which also has the special syntax `T?`.  However, reference types are analogous to C/C++'s pointers (except much safer), and so are *by their nature* nullable.  Reference types point to some other object in memory.  When they don't point to an object, they're null.
+This one has everyone excited, and I can't figure out why.  It flies in the face of one of the basic premises of .Net: there are value types, which are stored on the stack, and reference types, which are stored on the heap.  (It's a staple interview question!)  Because they live on the stack, value types are non-nullable.  To make one nullable, there is the `Nullable<T>` struct (which is itself non-nullable) which also has the special syntax `T?`.  However, reference types are analogous to C/C++'s pointers (except much safer), and so are *by their nature* nullable.  Reference types point to some other object in memory.  When they don't point to an object, they're null.
 
 This feature now turns all that around, saying reference types are no longer nullable by default.  instead, to make it nullable, we now have to add a `?` after the type, like a value type.
 
