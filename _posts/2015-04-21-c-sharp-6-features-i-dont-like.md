@@ -23,7 +23,7 @@ var value = somePossiblyNullObject?.SomeProperty;
 
 I like this one. I can't say anything bad about the feature specifically. It can't be misused as far as I can see; overused, maybe, but not misused.
 
-One code smell I see coming out of this is the development of [fluent-interface patterns](http://en.wikipedia.org/wiki/Fluent_interface) that allow the [input and output of nulls](https://codingforsmarties.wordpress.com/2015/03/22/nulls-and-extension-methods/). I also foresee junior developers using this operator everywhere, causing their more senior developers to face-palm and then explain that the use of this operator incurs some additional processing time and should be avoided unless necessary.
+One code smell I see coming out of this is the development of [fluent-interface patterns](http://en.wikipedia.org/wiki/Fluent_interface) that allow the [input and output of nulls](../../03/22/nulls-and-extension-methods). I also foresee junior developers using this operator everywhere, causing their more senior developers to face-palm and then explain that the use of this operator incurs some additional processing time and should be avoided unless necessary.
 
 Finally, this operator does not replace a good, old-fashioned null check. Checking for `null` explicitly early on can help you to catch potential errors before they happen.
 

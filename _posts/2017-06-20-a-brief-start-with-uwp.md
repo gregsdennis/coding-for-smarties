@@ -73,7 +73,7 @@ The other issue I found had to do with converters.  This app had converters for 
 
 The lack of generalization here made me cringe a little.  Also, why have a converter for switching out data templates or brushes based on view model property values?  That's what data triggers are for; converters should be for value transformation.  Lastly, for every view that needed a converter, they'd declare it in XAML.
 
-Now, I've posted about [the use of static instances for converters](https://codingforsmarties.wordpress.com/2015/03/28/static-wpf-converters/) before, and that's the exact direction I wanted to take this.  I sent off my post to the project lead, and his response was, "Cool! Let's do it!"  So I set about fixing all of this.
+Now, I've posted about [the use of static instances for converters](../../../2015/03/28/static-wpf-converters) before, and that's the exact direction I wanted to take this.  I sent off my post to the project lead, and his response was, "Cool! Let's do it!"  So I set about fixing all of this.
 
 I had two goals: create general-use converters, and make them static instances.
 

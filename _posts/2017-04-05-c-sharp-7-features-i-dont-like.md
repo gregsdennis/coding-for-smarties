@@ -9,7 +9,7 @@ It's that time again!  Time for my inner grumpy old man to come out and describe
 
 <!--more-->
 
-But before we dive in to C# 7, let's review [my criticisms of C# 6](https://codingforsmarties.wordpress.com/2015/04/21/c-6-features-i-dont-like/) and compare that to how I have adapted.
+But before we dive in to C# 7, let's review [my criticisms of C# 6](../../../2015/04/21/c-sharp-6-features-i-dont-like) and compare that to how I have adapted.
 
 ## C# 6, one(ish) year later
 

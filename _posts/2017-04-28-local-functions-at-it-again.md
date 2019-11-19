@@ -5,7 +5,7 @@ date:   2017-04-28 17:00:00 +1300
 tags: c# language rant
 excerpt_separator: <!--more-->
 ---
-I thought I got out everything during [my rant about the new C# features](https://codingforsmarties.wordpress.com/2017/04/05/c-7-features-i-dont-like/), but apparently I missed something...
+I thought I got out everything during [my rant about the new C# features](../05/c-sharp-7-features-i-dont-like), but apparently I missed something...
 
 <!--more-->
 

@@ -5,7 +5,7 @@ date:   2015-06-17 17:00:00 +1300
 tags: c# json
 excerpt_separator: <!--more-->
 ---
-We've been reviewing my open-source JSON library, Manatee.Json. [Last time](https://codingforsmarties.wordpress.com/2015/05/31/an-introduction-to-manateee-json/) we built an object model for the language. Today, we'll cover parsing, or converting a string with JSON content into our object model. Let's start with a short review of the syntax.
+We've been reviewing my open-source JSON library, Manatee.Json. [Last time](../../05/31/an-introduction-to-manateee-json) we built an object model for the language. Today, we'll cover parsing, or converting a string with JSON content into our object model. Let's start with a short review of the syntax.
 
 <!--more-->
 

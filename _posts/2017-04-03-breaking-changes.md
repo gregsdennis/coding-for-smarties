@@ -85,7 +85,7 @@ Most of the time, you want to avoid publishing breaking changes because working 
 
 ## How do I indicate that a new version contains a breaking change?
 
-This is probably the nicest benefit of following a semantic versioning scheme.  We've discussed [versioning of libraries](https://codingforsmarties.wordpress.com/2016/01/21/how-to-version-assemblies-destined-for-nuget/) before on Coding for Smarties, so many of you may see where this is going.
+This is probably the nicest benefit of following a semantic versioning scheme.  We've discussed [versioning of libraries](../../../2016/01/21/how-to-version-assemblies-destined-for-nuget) before on Coding for Smarties, so many of you may see where this is going.
 
 The idea behind semantic versioning is that the change in the version number indicates the type of change in the library.
 

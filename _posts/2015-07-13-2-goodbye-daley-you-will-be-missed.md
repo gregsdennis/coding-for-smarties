@@ -56,4 +56,4 @@ Lastly, why the Hawks? Anyone but the Hawks... or the Wings... or the Sharks... 
 
 Trevor, if you find this. Thank you for your time in Dallas. You've been my favorite player since you were drafted, and you'll always be a Star to me no matter whose jersey you wear. I'll see you when the Hawks come to Dallas for the season series opener on December 22. Until then, happy hockey.
 
-*[Edit: The Blackhawks traded Daley before the December 22 game against the Stars.  I never got to see him at a live game again.  I was pissed.  Read more about that experience in [my recap](https://codingforsmarties.wordpress.com/2016/06/13/may-the-cup-be-with-you-always/) of Daley winning the Stanley Cup with his next team.]*
+*[Edit: The Blackhawks traded Daley before the December 22 game against the Stars.  I never got to see him at a live game again.  I was pissed.  Read more about that experience in [my recap](../../../2016/06/13/may-the-cup-be-with-you-always) of Daley winning the Stanley Cup with his next team.]*

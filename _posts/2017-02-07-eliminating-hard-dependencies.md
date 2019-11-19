@@ -15,7 +15,7 @@ Today I'm not going to present a magic bullet solution to that problem.  There i
 
 <!--more-->
 
-***NOTE** I touched on this a bit in a [post I wrote last year](https://codingforsmarties.wordpress.com/2015/10/24/microsoft-did-it-wrong/).  But it seemed to me that the topic needed to be revisited.*
+***NOTE** I touched on this a bit in a [post I wrote last year](../../../2015/10/24/microsoft-did-it-wrong).  But it seemed to me that the topic needed to be revisited.*
 
 ## The scenario
 

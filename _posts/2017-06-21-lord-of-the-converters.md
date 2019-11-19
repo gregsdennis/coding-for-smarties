@@ -95,7 +95,7 @@ Foreground="{StaticResource MyBrush}"
 
 This syntax is our goal.  But unlike `BindingExtension` and `StaticResourceExtension`, we won't build a separate class; we're just going to make our converter do it directly.
 
-To implement this, we need to update our converter so that it derives from `MarkupExtension` and then override the `ProvideValue()` method.  I've [written about markup extensions before](https://codingforsmarties.wordpress.com/2016/12/20/reinventing-the-wheel/) so I'm going to gloss over some of the details.  Instead, here's the completed method.
+To implement this, we need to update our converter so that it derives from `MarkupExtension` and then override the `ProvideValue()` method.  I've [written about markup extensions before](../../../2016/12/20/reinventing-the-wheel) so I'm going to gloss over some of the details.  Instead, here's the completed method.
 
 ```c#
 public override object ProvideValue(IServiceProvider serviceProvider)

@@ -17,7 +17,7 @@ According to [Yahoo Sports](http://sports.yahoo.com/news/mom-battling-cancer-dal
 
 ## Some Feels
 
-Exactly eleven months ago, when the Stars announced that they were trading Daley, [I was devastated](https://codingforsmarties.wordpress.com/2015/07/13/goodbye-daley-you-will-be-missed/).  How could they trade such a promising and loyal player?  Especially when he was finally under a coaching style that fit his play style?  And to... that team?!
+Exactly eleven months ago, when the Stars announced that they were trading Daley, [I was devastated](../../../2015/07/13/goodbye-daley-you-will-be-missed).  How could they trade such a promising and loyal player?  Especially when he was finally under a coaching style that fit his play style?  And to... that team?!
 
 Alas, I realized that, not actually being a part of the Stars organization, I had no say in the decision.  They had their reasons, and a lot of people would say that it was a good move.  I waited to see how the new offense would work out before I made my judgment.  In some ways, it did help Dallas achieve their goals of being a more high-scoring threat (We now hold the regular season record for empty-net goals!  Woo frickin' hoo!).  But ultimately, I don't think it helped because, well, they didn't win the Cup.
 
