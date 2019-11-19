@@ -31,8 +31,8 @@ Here's my test code:
 [TestMethod]
 public void TestIt()
 {
-	var logger = new Mock<ILogger>();
-	logger.Verify(l => l.Error(It.IsAny<Exception>()));
+    var logger = new Mock<ILogger>();
+    logger.Verify(l => l.Error(It.IsAny<Exception>()));
 }
 ```
 

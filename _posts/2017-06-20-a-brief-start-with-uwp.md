@@ -35,17 +35,17 @@ To address this, I reorganized all of the styles in separate XAML files based on
 
 ```
 - MyProject.UWP
-	- Folder1
-	- Folder2
-	- Themes
-		- Styles
-			- Buttons.xaml
-			- TextBoxes.xaml
-			- ...
-		- Styles.xaml
-		- Generic.xaml
-	- Folder3
-	- ...
+  - Folder1
+  - Folder2
+  - Themes
+    - Styles
+       - Buttons.xaml
+       - TextBoxes.xaml
+       - ...
+    - Styles.xaml
+    - Generic.xaml
+  - Folder3
+  - ...
 ```
 
 Then I went to reference *Generic.xaml* in *App.xaml* and found that they had defined all of their brushes directly in that file... and on some `ThemeDictionaries` property that I've never seen.

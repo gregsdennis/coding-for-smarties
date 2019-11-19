@@ -16,24 +16,24 @@ Suppose we have a class with an absurdly large method.  (For convenience, I'm go
 ```c#
 class Service : IService
 {
-	public void DoSomething()
-	{
-		// initialize the process
+    public void DoSomething()
+    {
+        // initialize the process
 
-		// a chunk of code that's used in other classes
+        // a chunk of code that's used in other classes
 
-		// prep for the next step
+        // prep for the next step
 
-		// a chuck of code that's used only in this class
-		// but in multiple places
+        // a chuck of code that's used only in this class
+        // but in multiple places
 
-		// prep for the next step
+        // prep for the next step
 
-		// a chuck of code that's used only here
-		// but is still somewhat distinct
+        // a chuck of code that's used only here
+        // but is still somewhat distinct
 
-		// finish up
-	}
+        // finish up
+    }
 }
 ```
 
@@ -59,31 +59,31 @@ Our class how looks like this:
 ```c#
 class Service : IService
 {
-	private IMultiuseFunctionality _multiuseFunctionality;
+    private IMultiuseFunctionality _multiuseFunctionality;
 
-	public Service(IMultiuseFunctionality multiuseFunctionality)
-	{
-		_multiuseFunctionality = multiuseFunctionality;
-	}
+    public Service(IMultiuseFunctionality multiuseFunctionality)
+    {
+        _multiuseFunctionality = multiuseFunctionality;
+    }
 
-	public void DoSomething()
-	{
-		// initialize the process
+    public void DoSomething()
+    {
+        // initialize the process
 
-		_multiuseFunctionality.DoIt();
+        _multiuseFunctionality.DoIt();
 
-		// prep for the next step
+        // prep for the next step
 
-		// a chuck of code that's used only in this class
-		// but in multiple places
+        // a chuck of code that's used only in this class
+        // but in multiple places
 
-		// prep for the next step
+        // prep for the next step
 
-		// a chuck of code that's used only here
-		// but is still somewhat distinct
+        // a chuck of code that's used only here
+        // but is still somewhat distinct
 
-		// finish up
-	}
+        // finish up
+    }
 }
 ```
 
@@ -112,36 +112,36 @@ After that our class looks like this:
 ```c#
 class Service : IService
 {
-	private IMultiuseFunctionality _multiuseFunctionality;
+    private IMultiuseFunctionality _multiuseFunctionality;
 
-	public Service(IMultiuseFunctionality multiuseFunctionality)
-	{
-		_multiuseFunctionality = multiuseFunctionality;
-	}
+    public Service(IMultiuseFunctionality multiuseFunctionality)
+    {
+        _multiuseFunctionality = multiuseFunctionality;
+    }
 
-	public void DoSomething()
-	{
-		// initialize the process
+    public void DoSomething()
+    {
+        // initialize the process
 
-		_multiuseFunctionality.DoIt();
+        _multiuseFunctionality.DoIt();
 
-		// prep for the next step
+        // prep for the next step
 
-		_DoSomethingHere();
+        _DoSomethingHere();
 
-		// prep for the next step
+        // prep for the next step
 
-		// a chuck of code that's used only here
-		// but is still somewhat distinct
+        // a chuck of code that's used only here
+        // but is still somewhat distinct
 
-		// finish up
-	}
+        // finish up
+    }
 
-	private void _DoSomethingHere()
-	{
-		// a chuck of code that's used only in this class
-		// but in multiple places
-	}
+    private void _DoSomethingHere()
+    {
+        // a chuck of code that's used only in this class
+        // but in multiple places
+    }
 }
 ```
 
@@ -170,41 +170,41 @@ Now our code looks like this:
 ```c#
 class Service : IService
 {
-	private IMultiuseFunctionality _multiuseFunctionality;
+    private IMultiuseFunctionality _multiuseFunctionality;
 
-	public Service(IMultiuseFunctionality multiuseFunctionality)
-	{
-		_multiuseFunctionality = multiuseFunctionality;
-	}
+    public Service(IMultiuseFunctionality multiuseFunctionality)
+    {
+        _multiuseFunctionality = multiuseFunctionality;
+    }
 
-	public void DoSomething()
-	{
-		// initialize the process
+    public void DoSomething()
+    {
+        // initialize the process
 
-		_multiuseFunctionality.DoIt();
+        _multiuseFunctionality.DoIt();
 
-		// prep for the next step
+        // prep for the next step
 
-		_DoSomethingHere();
+        _DoSomethingHere();
 
-		// prep for the next step
+        // prep for the next step
 
-		_DoTheThing();
+        _DoTheThing();
 
-		// finish up
-	}
+        // finish up
+    }
 
-	private void _DoSomethingHere()
-	{
-		// a chuck of code that's used only in this class
-		// but in multiple places
-	}
+    private void _DoSomethingHere()
+    {
+        // a chuck of code that's used only in this class
+        // but in multiple places
+    }
 
-	private void _DoTheThing()
-	{
-		// a chuck of code that's used only here
-		// but is still somewhat distinct
-	}
+    private void _DoTheThing()
+    {
+        // a chuck of code that's used only here
+        // but is still somewhat distinct
+    }
 }
 ```
 

@@ -13,14 +13,14 @@ I was working on a WPF app for work and I used this to check if the code I wante
 
 ```c#
 Action action = () =>
-	{
-		// do stuff
-	};
+    {
+        // do stuff
+    };
 
 if (Dispatcher.CurrentDispatcher.CheckAccess())
-	action();
+    action();
 else
-	Dispatcher.CurrentDispatcher.BeginInvoke(action);
+    Dispatcher.CurrentDispatcher.BeginInvoke(action);
 ```
 
 Looks good.
@@ -30,13 +30,13 @@ Well Resharper, being the passive aggressive helper that it is, suggested that I
 ```c#
 void Action()
 {
-	// do stuff
+    // do stuff
 }
 
 if (Dispatcher.CurrentDispatcher.CheckAccess())
-	Action();
+    Action();
 else
-	Dispatcher.CurrentDispatcher.BeginInvoke((Action) Action);
+    Dispatcher.CurrentDispatcher.BeginInvoke((Action) Action);
 ```
 
 Take a long look at that last line.  Now, instead of creating an `Action` from a lambda expression, I have to **cast a method** to an `Action`.  How is this better?

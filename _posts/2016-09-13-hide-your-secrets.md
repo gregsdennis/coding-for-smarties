@@ -14,41 +14,41 @@ For reference, let's bring in the class again.
 ```c#
 class Service : IService
 {
-	private IMultiuseFunctionality _multiuseFunctionality;
+    private IMultiuseFunctionality _multiuseFunctionality;
 
-	public Service(IMultiuseFunctionality multiuseFunctionality)
-	{
-		_multiuseFunctionality = multiuseFunctionality;
-	}
+    public Service(IMultiuseFunctionality multiuseFunctionality)
+    {
+        _multiuseFunctionality = multiuseFunctionality;
+    }
 
-	public void DoSomething() // defined in interface
-	{
-		// initialize the process
+    public void DoSomething() // defined in interface
+    {
+        // initialize the process
 
-		_multiuseFunctionality.DoIt();
+        _multiuseFunctionality.DoIt();
 
-		// prep for the next step
+        // prep for the next step
 
-		_DoSomethingHere();
+        _DoSomethingHere();
 
-		// prep for the next step
+        // prep for the next step
 
-		_DoTheThing();
+        _DoTheThing();
 
-		// finish up
-	}
+        // finish up
+    }
 
-	public void DoSomethingHere()
-	{
-		// a chuck of code that's used only in this class
-		// but in multiple places
-	}
+    public void DoSomethingHere()
+    {
+        // a chuck of code that's used only in this class
+        // but in multiple places
+    }
 
-	public void DoTheThing()
-	{
-		// a chuck of code that's used only here
-		// but is still somewhat distinct
-	}
+    public void DoTheThing()
+    {
+        // a chuck of code that's used only here
+        // but is still somewhat distinct
+    }
 }
 ```
 
@@ -110,28 +110,28 @@ So we create installer classes in each of the projects:
 // In the Console project
 public class ConsoleInstaller : IWindsorInstaller
 {
-	public void Install(IWindsorContainer container, IConfigurationStore store)
-	{
-		container.Register(Component.For<IRunner>().ImplementedBy<Runner>());
-	}
+    public void Install(IWindsorContainer container, IConfigurationStore store)
+    {
+        container.Register(Component.For<IRunner>().ImplementedBy<Runner>());
+    }
 }
 
 // In the DataImport project
 public class DataImportInstaller : IWindsorInstaller
 {
-	public void Install(IWindsorContainer container, IConfigurationStore store)
-	{
-		container.Register(Component.For<IDataImporter>().ImplementedBy<DataImporter>());
-	}
+    public void Install(IWindsorContainer container, IConfigurationStore store)
+    {
+        container.Register(Component.For<IDataImporter>().ImplementedBy<DataImporter>());
+    }
 }
 
 // In the DataExport project
 public class DataExportInstaller : IWindsorInstaller
 {
-	public void Install(IWindsorContainer container, IConfigurationStore store)
-	{
-		container.Register(Component.For<IDataExporter>().ImplementedBy<DataExporter>());
-	}
+    public void Install(IWindsorContainer container, IConfigurationStore store)
+    {
+        container.Register(Component.For<IDataExporter>().ImplementedBy<DataExporter>());
+    }
 }
 ```
 
@@ -142,17 +142,17 @@ In the `Program.Main()` method, we just need to load the installers using the fo
 ```c#
 static void Main(string[] args)
 {
-	// Create a new container.
-	var container = new WindsorContainer();
+    // Create a new container.
+    var container = new WindsorContainer();
 
-	// This automatically installs all public IWindsorInstaller implementations from all
-	// assemblies in the application directory.
-	var assemblyDiretory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-	container.Install(FromAssembly.InDirectory(new AssemblyFilter(assemblyDiretory)));
+    // This automatically installs all public IWindsorInstaller implementations from all
+    // assemblies in the application directory.
+    var assemblyDiretory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+    container.Install(FromAssembly.InDirectory(new AssemblyFilter(assemblyDiretory)));
 
-	var runner = container.Resolve<IRunner>();
+    var runner = container.Resolve<IRunner>();
 
-	runner.Go();
+    runner.Go();
 }
 ```
 

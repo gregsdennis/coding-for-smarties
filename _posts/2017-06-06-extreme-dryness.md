@@ -24,7 +24,7 @@ I was writing NUnit tests for a few (28) mapper classes today.  Each of the mapp
 ```c#
 interface ITypeMapper<TFrom, TTo>
 {
-	TTo Convert(TFrom source);
+    TTo Convert(TFrom source);
 }
 ```
 
@@ -36,20 +36,20 @@ The test looks like this:
 [TestFixture]
 public class MyMapperTests : MapperTestBase<int, string>
 {
-	public static IEnumerable TestCases
-	{
-		get
-		{
-			yield return new TestCaseData(1, "1.0");
-			yield return new TestCaseData(135, "135.0");
-			yield return new TestCaseData(6816, "6816.0");
-		}
-	}
+    public static IEnumerable TestCases
+    {
+        get
+        {
+            yield return new TestCaseData(1, "1.0");
+            yield return new TestCaseData(135, "135.0");
+            yield return new TestCaseData(6816, "6816.0");
+        }
+    }
 
-	public override ITypeMapper<int, string> GetMapper()
-	{
-		return new MyMapper();
-	}
+    public override ITypeMapper<int, string> GetMapper()
+    {
+        return new MyMapper();
+    }
 }
 ```
 
@@ -58,18 +58,18 @@ Not really a whole lot functionally in there.  No test methods; just some test d
 ```c#
 public abstract class MapperTestBase<TFrom, TTo>
 {
-	public static IEnumerable TestCases { get; }
+    public static IEnumerable TestCases { get; }
 
-	[TestCaseSource(nameof(TestCases))]
-	public void Convert(TFrom source, TTo expected)
-	{
-		var target = GetMapper();
-		var actual = target.Convert(source);
+    [TestCaseSource(nameof(TestCases))]
+    public void Convert(TFrom source, TTo expected)
+    {
+        var target = GetMapper();
+        var actual = target.Convert(source);
 
-		actual.ShouldBeEquivalentTo(expected); // a little FluentAssertions magic
-	}
+        actual.ShouldBeEquivalentTo(expected); // a little FluentAssertions magic
+    }
 
-	protected abstract ITypeMapper<TFrom, TTo> GetMapper();
+    protected abstract ITypeMapper<TFrom, TTo> GetMapper();
 }
 ```
 

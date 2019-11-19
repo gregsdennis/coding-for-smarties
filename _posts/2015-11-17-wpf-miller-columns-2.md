@@ -37,16 +37,15 @@ To begin, let's assume that we're going to house our control in a control librar
 - A Themes\Generic.xaml file containing a default style.
     ```xml
     <Style TargetType="{x:Type local:MillerColumns}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:MillerColumns}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type local:MillerColumns}">
+            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
     </Style>
     ```
 
@@ -75,17 +74,17 @@ I think the XAML we had before is a good place to start. It's clean and concise.
 
 ```xml
 <ItemsControl x:Name="MillerColumnsView" VerticalContentAlignment="Stretch">
-    <ItemsControl.ItemsPanel>
-        <ItemsPanelTemplate>
-            <StackPanel Orientation="Horizontal"/>
-        </ItemsPanelTemplate>
-    </ItemsControl.ItemsPanel>
-    <ItemsControl.ItemTemplate>
-        <DataTemplate DataType="my:DataNode">
-            <ListBox ItemsSource="{Binding Children}"
-                     Style="{StaticResource StackedListBoxStyle}"/>
-        </DataTemplate>
-    </ItemsControl.ItemTemplate>
+  <ItemsControl.ItemsPanel>
+    <ItemsPanelTemplate>
+      <StackPanel Orientation="Horizontal"/>
+    </ItemsPanelTemplate>
+  </ItemsControl.ItemsPanel>
+  <ItemsControl.ItemTemplate>
+    <DataTemplate DataType="my:DataNode">
+      <ListBox ItemsSource="{Binding Children}"
+               Style="{StaticResource StackedListBoxStyle}"/>
+    </DataTemplate>
+  </ItemsControl.ItemTemplate>
 </ItemsControl>
 ```
 
@@ -191,29 +190,29 @@ So as it turns out, I didn't need to get a reference to the `ItemsControl`, and 
 
 ```xml
 <Style TargetType="{x:Type local:MillerColumns}">
-    <Setter Property="Template">
-        <Setter.Value>
-            <ControlTemplate TargetType="{x:Type local:MillerColumns}">
-                <Border Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
-                    <ItemsControl ItemsSource="{TemplateBinding Chain}" VerticalContentAlignment="Stretch">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ListBox ItemsSource="{Binding}" Width="100"
-                                         local:MillerColumns.Track="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:MillerColumns}}}"/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </Border>
-            </ControlTemplate>
-        </Setter.Value>
-    </Setter>
+  <Setter Property="Template">
+    <Setter.Value>
+      <ControlTemplate TargetType="{x:Type local:MillerColumns}">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+          <ItemsControl ItemsSource="{TemplateBinding Chain}" VerticalContentAlignment="Stretch">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"/>
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <ListBox ItemsSource="{Binding}" Width="100"
+                         local:MillerColumns.Track="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:MillerColumns}}}"/>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Border>
+      </ControlTemplate>
+    </Setter.Value>
+  </Setter>
 </Style>
 ```
 

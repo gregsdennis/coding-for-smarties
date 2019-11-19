@@ -37,8 +37,8 @@ The `DataTemplate` for the items:
 
 ```xml
 <DataTemplate x:Key="DataNodeStackedDataTemplate" DataType="my:DataNode">
-    <ListBox ItemsSource="{Binding Children}"
-             Style="{StaticResource StackedListBoxStyle}"/>
+  <ListBox ItemsSource="{Binding Children}"
+           Style="{StaticResource StackedListBoxStyle}"/>
 </DataTemplate>
 ```
 
@@ -49,11 +49,11 @@ The `ItemsControl`:
 ```xml
 <ItemsControl x:Name="MillerColumnsView" VerticalContentAlignment="Stretch"
               ItemTemplate="{StaticResource DataNodeStackedDataTemplate}">
-    <ItemsControl.ItemsPanel>
-        <ItemsPanelTemplate>
-            <StackPanel Orientation="Horizontal"/>
-        </ItemsPanelTemplate>
-    </ItemsControl.ItemsPanel>
+  <ItemsControl.ItemsPanel>
+    <ItemsPanelTemplate>
+       <StackPanel Orientation="Horizontal"/>
+    </ItemsPanelTemplate>
+  </ItemsControl.ItemsPanel>
 </ItemsControl>
 ```
 

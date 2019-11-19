@@ -20,7 +20,7 @@ For example, a common interface in WPF is `IValueConverter`, and typically class
 ```c#
 class FeetToInchesConverter : IValueConverter
 {
-	... // implementation stuff
+    ... // implementation stuff
 }
 ```
 
@@ -33,7 +33,7 @@ I propose we drop the current convention in favor of a new one.  Instead of nami
 ```c#
 class FeetToInchesConverter : IConvertValues
 {
-	... // implementation stuff
+    ... // implementation stuff
 }
 ```
 
@@ -47,13 +47,13 @@ Some interfaces get a little weird, though.  Specifically the ones that describe
 
 VB.<span></span>Net
 ```vb
-	Class PointToVectorConverter
-		Implements IConvertTypes(Of Point, Vector)
+Class PointToVectorConverter
+    Implements IConvertTypes(Of Point, Vector)
 ```
 
 C#
 ```c#
-	class PointToVectorConverter : IConvertTypes<Point, Vector>
+class PointToVectorConverter : IConvertTypes<Point, Vector>
 ```
 
 Now that I've seen those, I don't really see much improvement. Maybe it's just good for service-defining interfaces.

@@ -15,7 +15,7 @@ In order to support OAuth 2, I've decided to use [IdentityServer4](https://githu
 
 ```c#
 services.AddIdentityServer(options => { ... })
-        .AddDeveloperSigningCredential(); 
+        .AddDeveloperSigningCredential();
 ```
 
 To support issuing tokens to APIs and other clients, we'll need to set up the Client Credentials grant. For this, you'll need to implement two interfaces: `IResourceStore` and `IClientStore`.
@@ -47,7 +47,7 @@ services.AddIdentityServer(options => { ... })
         .AddResourceStore<ResourceStore>()
         .AddClientStore<ClientStore>()
         .AddProfileService<UserProfileService>()
-        .AddResourceOwnerValidator<UserResourceOwnerPasswordValidator>(); 
+        .AddResourceOwnerValidator<UserResourceOwnerPasswordValidator>();
 ```
 
 And that's pretty much it. There are some other IdentityServer4 configuration details, but they go into it in their docs, so I'm not going to cover it here.
@@ -88,7 +88,7 @@ public class ClientsController : ControllerBase
         await _clientsService.SaveClientDetails(request, ControllerContext.HttpContext.RequestAborted);
         return Ok();
     }
-} 
+}
 ```
 
 Then in `SaveClientDetails()`, I just need to decrypt the encrypted portion, and then save the client data so that the `IResourceStore` and `IClientStore` implementations can read it.
@@ -151,16 +151,16 @@ To do this, we need to add a new REST endpoint. I added a method to the existing
 ```c#
 [Route("api/[controller]")]
 [ApiController] 
-public class ClientsController : ControllerBase 
+public class ClientsController : ControllerBase
 {
-    ... 
+    ...
     [HttpGet("{clientId}")] 
-    public Task<ActionResult<ServiceInfo>> Get(string clientId) 
-    { 
-        return _clientsService.GetServiceInfoById(clientId, ControllerContext.HttpContext.RequestAborted); 
-    } 
+    public Task<ActionResult<ServiceInfo>> Get(string clientId)
+    {
+        return _clientsService.GetServiceInfoById(clientId, ControllerContext.HttpContext.RequestAborted);
+    }
     [HttpPost] 
-    public async Task<ActionResult> Post([FromBody] ClientRegistrationRequest request) { ... } 
+    public async Task<ActionResult> Post([FromBody] ClientRegistrationRequest request) { ... }
 }
 ```
 
@@ -173,11 +173,11 @@ Lastly, here's ServiceInfo for you:
 ```c#
 public class ServiceInfo 
 { 
-    public string Id { get; set; } 
-    public string Name { get; set; } 
-    public string Url { get; set; } 
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string Url { get; set; }
     public IEnumerable<string> DefinedScopes { get; set; }; 
-    public IEnumerable<string> RequestedScopes { get; set; }; 
+    public IEnumerable<string> RequestedScopes { get; set; };
 } 
 ```
 

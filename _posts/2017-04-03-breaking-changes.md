@@ -26,8 +26,8 @@ There are three basic types of compile-time changes that a library can have:
 
 1. Adding new types
 1. Modifying existing types
-	1. Adding members
-	1. Removing members
+    1. Adding members
+    1. Removing members
 1. Removing types
 
 The last one (removing types) seems obvious.  If we remove a type that a consumer is using, the code which references that type will no longer compile.  This is always a breaking change.

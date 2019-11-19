@@ -69,7 +69,7 @@ But the variable declaration one seems useful, and the idea looks to merge in wi
 ```c#
 int i;
 if (someObject is int)
-	i = (int)someObject;
+    i = (int)someObject;
 else return;
 Console.WriteLine($"value = {i}");
 ```
@@ -93,20 +93,20 @@ The other one extends the `switch`-`case` statements to allow us to switch on an
 Shape shape = [something];
 switch (shape)
 {
-	case Circle c:
-		Console.WriteLine($"This is a circle with radius {c.Radius}.");
-		break; 
-	case Rectangle s where s.X == s.Y:
-		Console.WriteLine($"This is a {s.X} x {s.Y} square.");
-		break; 
-	case Rectangle r:
-		Console.WriteLine($"This is a {s.X} x {s.Y} rectangle.");
-		break; 
-	default:
-		Console.WriteLine("I don't know what kind of shape this is.");
-		break;
-	case null:
-		throw new Exception("What have you done?");
+    case Circle c:
+        Console.WriteLine($"This is a circle with radius {c.Radius}.");
+        break; 
+    case Rectangle s where s.X == s.Y:
+        Console.WriteLine($"This is a {s.X} x {s.Y} square.");
+        break; 
+    case Rectangle r:
+        Console.WriteLine($"This is a {s.X} x {s.Y} rectangle.");
+        break; 
+    default:
+        Console.WriteLine("I don't know what kind of shape this is.");
+        break;
+    case null:
+        throw new Exception("What have you done?");
 }
 ```
 
@@ -121,8 +121,8 @@ The feature looks like this:
 ```c#
 (string, string, string) LookupName(long, id)
 {
-	[do the lookup]
-	return (first, middle, last);
+    [do the lookup]
+    return (first, middle, last);
 }
 ```
 
@@ -178,9 +178,9 @@ One of the more exotic uses I've had for lambdas is conditional operations: if a
 ```c#
 Func<int, int> doMath;
 if (shouldIncrease)
-	doMath = i => i++;
+    doMath = i => i++;
 else
-	doMath = i => i >> 1;
+    doMath = i => i >> 1;
 Console.WriteLine(doMath(value));
 ```
 
@@ -189,17 +189,17 @@ Now with local functions, we have the ability to replace the lambdas with functi
 ```c#
 int Increment(int i)
 {
-	return i++;
+    return i++;
 }
 int Half(int i)
 {
-	return i >> 1;
+    return i >> 1;
 }
 Func<int, int> doMath;
 if (shouldIncrease)
-	doMath = Increment;
+    doMath = Increment;
 else
-	doMath = Half;
+    doMath = Half;
 Console.WriteLine(doMath(value));
 ```
 
@@ -226,18 +226,18 @@ Here's an interesting example from the post I mentioned before:
 ```c#
 public IEnumerable<T> Filter<T>(IEnumerable<T> source, Func<T, bool> filter)
 {
-	if (source == null) throw new ArgumentNullException(nameof(source));
-	if (filter == null) throw new ArgumentNullException(nameof(filter));
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (filter == null) throw new ArgumentNullException(nameof(filter));
 
-	return Iterator();
+    return Iterator();
 
-	IEnumerable<T> Iterator()
-	{
-		foreach (var element in source) 
-		{
-			if (filter(element)) { yield return element; }
-		}
-	}
+    IEnumerable<T> Iterator()
+    {
+        foreach (var element in source) 
+        {
+            if (filter(element)) { yield return element; }
+        }
+    }
 }
 ```
 
@@ -246,17 +246,17 @@ The author argues that with this approach, the arguments can be checked outside 
 ```c#
 public IEnumerable<T> Filter<T>(IEnumerable<T> source, Func<T, bool> filter)
 {
-	if (source == null) throw new ArgumentNullException(nameof(source));
-	if (filter == null) throw new ArgumentNullException(nameof(filter));
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (filter == null) throw new ArgumentNullException(nameof(filter));
 
-	return Iterator(source, filter);
+    return Iterator(source, filter);
 }
 private IEnumerable<T> Iterator(IEnumerable<T> source, Func<T, bool> filter)
 {
-	foreach (var element in source) 
-	{
-		if (filter(element)) { yield return element; }
-	}
+    foreach (var element in source) 
+    {
+        if (filter(element)) { yield return element; }
+    }
 }
 ```
 

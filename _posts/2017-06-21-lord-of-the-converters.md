@@ -26,18 +26,18 @@ Let's start by simply creating a converter that combines our two converters expl
 ```c#
 public class AggregateConverter : IValueConverter
 {
-	public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-	{
-		var currentValue = HasItemsConverter.Instance.Convert(value, targetType, parameter, culture);
-		currentValue = BoolToVisibilityConverter.FalseToCollapsed.Convert(currentValue, targetType, parameter, culture);
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        var currentValue = HasItemsConverter.Instance.Convert(value, targetType, parameter, culture);
+        currentValue = BoolToVisibilityConverter.FalseToCollapsed.Convert(currentValue, targetType, parameter, culture);
 
-		return currentValue;
-	}
+        return currentValue;
+    }
 
-	public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-	{
-		throw new NotImplementedException();
-	}
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
 }
 ```
 
@@ -49,19 +49,19 @@ Okay.  Not bad, but we need to make this a bit more generic so that we can speci
 [ContentProperty(nameof(Converters))]
 public class AggregateConverter : IValueConverter
 {
-	// Definitely need to initialize this; otherwise we'd get a NullReferenceException.
-	public IList Converters { get; } = new List<IValueConverter>();
+    // Definitely need to initialize this; otherwise we'd get a NullReferenceException.
+    public IList Converters { get; } = new List<IValueConverter>();
 
-	public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-	{
-		return Converters.Aggregate(value, (v, c) => Apply(c, v, targetType, parameter, culture);
-	}
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return Converters.Aggregate(value, (v, c) => Apply(c, v, targetType, parameter, culture);
+    }
 
-	private object Apply(IValueConverter converter, object value, Type targetType,
-							object parameter, CultureInfo culture)
-	{
-		return converter.Convert(value, targetType, parameter, culture);
-	}
+    private object Apply(IValueConverter converter, object value, Type targetType,
+                         object parameter, CultureInfo culture)
+    {
+        return converter.Convert(value, targetType, parameter, culture);
+    }
 }
 ```c#
 
@@ -69,16 +69,16 @@ We can use it like this:
 
 ```xml
 <Border>
-	<Border.Visibility>
-		<Binding Path="MyList">
-			<Binding.Converter>
-				<cvtr:AggregateConverter>
-					<x:Static Member="cvtr:HasItemsConverter.Instance"/>
-					<x:Static Member="cvtr:BoolToVisibilityConverter.FalseToCollapsed"/>
-				</cvtr:AggregateConverter>
-			</Binding.Converter>
-		</Binding>
-	</Border.Visibility>
+  <Border.Visibility>
+    <Binding Path="MyList">
+      <Binding.Converter>
+        <cvtr:AggregateConverter>
+          <x:Static Member="cvtr:HasItemsConverter.Instance"/>
+          <x:Static Member="cvtr:BoolToVisibilityConverter.FalseToCollapsed"/>
+        </cvtr:AggregateConverter>
+      </Binding.Converter>
+    </Binding>
+  </Border.Visibility>
 </Border>
 ```
 
@@ -100,7 +100,7 @@ To implement this, we need to update our converter so that it derives from `Mark
 ```c#
 public override object ProvideValue(IServiceProvider serviceProvider)
 {
-	return this;
+    return this;
 }
 ```
 
@@ -114,16 +114,16 @@ Well that doesn't help much.  We can create a converter, but we have no way of p
 
 ```
 {cvtr:AggregateConverter {x:Static cvtr:HasItemsConverter.Instance}
-						 {x:Static cvtr:BoolToVisibilityConverter.FalseToCollapsed}}
+                         {x:Static cvtr:BoolToVisibilityConverter.FalseToCollapsed}}
 ```
 
 To do this, we need to create a constructor.  Ideally, we'd want our constructor to take any number of converters.  In C#, this means we need to use the `params` keyword, like this:
 
 ```c#
-	public AggregateConverter(params IValueConverter[] converters)
-	{
-		Converters = converters.ToList();
-	}
+public AggregateConverter(params IValueConverter[] converters)
+{
+    Converters = converters.ToList();
+}
 ```
 
 Now we're getting an error that says there isn't a constructor that takes two arguments, and you're like, "IT'S RIGHT THERE!"  That's when you figure out that the `params` keyword is really just a C# compiler trick, and there's actually only one parameter of type `IValueConverer[]`, an array.  So instead we have to create a series of constructors, each one taking a different number of converters.  I decided to create constructors to support between two and five converters.  I'm sure you can imagine how to build those.

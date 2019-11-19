@@ -20,7 +20,7 @@ Suppose we have a class with a member.  It could be a property, method, event, o
 ```c#
 public class ExistingClass
 {
-	public string Name { get; set; } // "Cat"
+    public string Name { get; set; } // "Cat"
 }
 ```
 
@@ -31,7 +31,7 @@ Now suppose we want to inherit this class and override the `Name` property.  We 
 ```c#
 public class MyClass : ExistingClass
 {
-	public string Name { get; set; } // "Dog"
+    public string Name { get; set; } // "Dog"
 }
 ```
 
@@ -40,7 +40,7 @@ Now Resharper (or the compiler) is complaining that we can't override this metho
 ```c#
 public class MyClass : ExistingClass
 {
-	public new string Name { get; set; } // "Dog"
+    public new string Name { get; set; } // "Dog"
 }
 ```
 
@@ -71,15 +71,15 @@ We're going to start by creating a static class with a static property.
 ```c#
 class Program
 {
-	static void Main(string[] args)
-	{
-		Console.WriteLine(Test.Value);
-	}
+    static void Main(string[] args)
+    {
+        Console.WriteLine(Test.Value);
+    }
 }
 
 public static class Test
 {
-	public static string Value { get; } = "start";
+    public static string Value { get; } = "start";
 }
 ```
 
@@ -90,9 +90,9 @@ Let's start by converting this from a static class to a singleton, but we'll lea
 ```c#
 public class Test
 {
-	public static Test Instance { get; }
+    public static Test Instance { get; }
 
-	public static string Value { get; }
+    public static string Value { get; }
 }
 ```
 
@@ -101,20 +101,20 @@ Then we get weird.  We're going to make this a partial class and declare a parti
 ```c#
 public partial class Test
 {
-	private string _value = "start";
+    private string _value = "start";
 
-	public static Test Instance { get; } = new Test();
+    public static Test Instance { get; } = new Test();
 
-	public static string Value
-	{
-		get
-		{
-			Instance.SetValue();
-			return Instance._value;
-		}
-	}
+    public static string Value
+    {
+        get
+        {
+            Instance.SetValue();
+            return Instance._value;
+        }
+    }
 
-	partial void SetValue();
+    partial void SetValue();
 }
 ```
 
@@ -123,10 +123,10 @@ Let's go through this.  When we call `Test.Value`, the property getter is then g
 ```c#
 public partial class Test
 {
-	partial void SetValue()
-	{
-		_value = "changed";
-	}
+    partial void SetValue()
+    {
+        _value = "changed";
+    }
 }
 ```
 

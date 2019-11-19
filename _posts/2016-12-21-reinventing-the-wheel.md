@@ -15,11 +15,11 @@ Suppose you wanted to execute a command when the focus left a text box.  The *In
 
 ```xml
 <TextBox Text="{Binding SomeText}">
-	<i:Interaction.Triggers>
-		<i:EventTrigger EventName="LostFocus">
-			<i:InvokeCommandAction Command="{Binding SomeCommand}"/>
-		</i:EventTrigger>
-	</i:Interaction.Triggers>
+  <i:Interaction.Triggers>
+    <i:EventTrigger EventName="LostFocus">
+      <i:InvokeCommandAction Command="{Binding SomeCommand}"/>
+    </i:EventTrigger>
+  </i:Interaction.Triggers>
 </TextBox>
 ```
 
@@ -43,7 +43,7 @@ Enter the `EventBinding` class.  This is a special markup extension that solves 
 
 ```xml
 <TextBox Text="{Binding SomeText}"
-		 LostFocus="{fmwk:EventBinding SomeCommand}"/>
+         LostFocus="{fmwk:EventBinding SomeCommand}"/>
 ```
 
 That's it!  When the event fires, the command will execute.
@@ -55,10 +55,10 @@ First, in order to use any class as a markup extension, it must derive from `Mar
 ```c#
 public class EventBinding : MarkupExtension
 {
-	public override object ProvideValue(IServiceProvider serviceProvider)
-	{
-		throw new NotImplementedException();
-	}
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        throw new NotImplementedException();
+    }
 }
 ```
 
@@ -71,10 +71,10 @@ private string _commandName;
 
 public EventBinding(string commandName)
 {
-	if (_commandName == null)
-		throw new ArgumentNullException(nameof(commandName));
+    if (_commandName == null)
+        throw new ArgumentNullException(nameof(commandName));
 
-	_commandName = commandName;
+    _commandName = commandName;
 }
 ```
 
@@ -87,21 +87,21 @@ To wrap the command, we'll create a new class.  It should be private and contain
 ```c#
 private class EventCommandHandler
 {
-	private readonly ICommand _command;
+    private readonly ICommand _command;
 
-	public EventCommandHandler(ICommand command)
-	{
-		if (command == null)
-			throw new ArgumentNullException(nameof(command));
+    public EventCommandHandler(ICommand command)
+    {
+        if (command == null)
+            throw new ArgumentNullException(nameof(command));
 
-		_command = command;
-	}
+        _command = command;
+    }
 
-	public void Handle<T>(object sender, T e)
-	{
-		if (_command.CanExecute(e))
-			_command.Execute(e);
-	}
+    public void Handle<T>(object sender, T e)
+    {
+        if (_command.CanExecute(e))
+            _command.Execute(e);
+    }
 }
 ```
 
@@ -120,16 +120,16 @@ Instead of jumping through hoops to manually evaluate a binding, we let bindings
 ```c#
 private class BindingTarget : FrameworkElement
 {
-	public static readonly DependencyProperty CommandProperty =
-		DependencyProperty.Register("Command", typeof(ICommand),
-									typeof(BindingTarget),
-									new PropertyMetadata(null));
+    public static readonly DependencyProperty CommandProperty =
+        DependencyProperty.Register("Command", typeof(ICommand),
+                                    typeof(BindingTarget),
+                                    new PropertyMetadata(null));
 
-	public ICommand Command
-	{
-		get { return (ICommand)GetValue(CommandProperty); }
-		set { SetValue(CommandProperty, value); }
-	}
+    public ICommand Command
+    {
+        get { return (ICommand)GetValue(CommandProperty); }
+        set { SetValue(CommandProperty, value); }
+    }
 }
 ```
 
@@ -142,8 +142,8 @@ Since we have an immediate need for the binding target, let's start there.  Firs
 ```c#
 var target = provider.TargetObject as FrameworkElement;
 if (target == null)
-	throw new ArgumentException(
-		"Event bindings can only be set on types derived from FrameworkElement.");
+    throw new ArgumentException(
+        "Event bindings can only be set on types derived from FrameworkElement.");
 ```
 
 Next we create a new `BindingTarget` instance, set the data context, and apply the binding.
@@ -173,15 +173,15 @@ var handledEvent = provider.TargetProperty as EventInfo;
 Type eventType;
 if (handledEvent == null)
 {
-	var handledMethod = provider.TargetProperty as MethodInfo;
-	if (handledMethod == null)
-		throw new ArgumentException("Event bindings can only be set on events.");
-	eventType = handledMethod.GetParameters()
-							 .Last()
-							 .ParameterType;
+    var handledMethod = provider.TargetProperty as MethodInfo;
+    if (handledMethod == null)
+        throw new ArgumentException("Event bindings can only be set on events.");
+    eventType = handledMethod.GetParameters()
+                             .Last()
+                             .ParameterType;
 }
 else
-	eventType = handledEvent.EventHandlerType;
+    eventType = handledEvent.EventHandlerType;
 
 var eventType = handledEvent.EventHandlerType;
 ```
@@ -192,17 +192,17 @@ That's our event delegate type.  The parameter type just requires a little refle
 
 ```c#
 var eventArgsType = eventType.GetMethod("Invoke")
-							 .GetParameters()
-							 .Last()
-							 .ParameterType;
+                             .GetParameters()
+                             .Last()
+                             .ParameterType;
 ```
 
 Now we use a little more reflection to get a typed `MethodInfo` from the handler and we can create our delegate.
 
 ```c#
 var handlerMethod = typeof(EventCommandHandler)
-						.GetMethod(nameof(handler.Handle))
-						.MakeGenericMethod(eventArgsType);
+                        .GetMethod(nameof(handler.Handle))
+                        .MakeGenericMethod(eventArgsType);
 
 return Delegate.CreateDelegate(eventType, handler, handlerMethod);
 ```

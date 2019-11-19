@@ -48,14 +48,14 @@ Let's look at an example.
 
 ```c#
 {
-    "string":"a string value",
-    "array":[
-        "an array of",
-        4,
-        "values",
-        true
-    ],
-    "null":null
+  "string":"a string value",
+  "array":[
+    "an array of",
+    4,
+    "values",
+    true
+  ],
+  "null":null
 }
 ```
 
@@ -63,14 +63,14 @@ If we were to tokenize the entire string, we'd end up with
 
 ```
 OpenBrace,
-    Quote, Colon, Quote, Comma,
-    Quote, Colon, OpenBracket,
-        Quote, Comma,
-        Number, Comma,
-        Quote, Comma,
-        Boolean,
-    CloseBracket, Comma
-    Quote, Colon, Null
+  Quote, Colon, Quote, Comma,
+  Quote, Colon, OpenBracket,
+    Quote, Comma,
+    Number, Comma,
+    Quote, Comma,
+    Boolean,
+  CloseBracket, Comma
+  Quote, Colon, Null
 CloseBrace
 ```
 
