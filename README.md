@@ -1,4 +1,4 @@
 Content for my blog
 
-Current site: https://codingforsmarties.wordpress.com
-Headed to... ???
+Old site: https://codingforsmarties.wordpress.com
+Now on: https://gregsdennis.github.io/coding-for-smarties
