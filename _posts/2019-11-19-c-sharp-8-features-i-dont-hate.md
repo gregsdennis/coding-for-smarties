@@ -9,7 +9,7 @@ I expect my readers are wondering where my continuation of the *C# x Features I 
 
 So instead, let's go over the new feature set with a bit more openness and optimism.  This isn't to say that I think all of these features are amazing additions or that I'm excited about all of them, but I will be a bit more accepting of their inclusion into the language.
 
-<!-- more -->
+<!--more-->
 
 ## C# 7 in review
 
