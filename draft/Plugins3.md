@@ -1,4 +1,4 @@
-###Fixing the app in order to break it (again)
+### Fixing the app in order to break it (again)
 
 The other scenario I want to cover has to do with referenced libraries.  It's likely that many of you have run into this issue before.  One project references one version of a library and another references a different version.  When it builds, you either get a complaint from the compiler or a run-time `FileNotFoundException` stating it can't find the proper version of the referenced library.
 
@@ -6,7 +6,7 @@ It's actually easier to run into this error in a pluggable application because t
 
 In order to do this, we need to ensure our application references a library that we can incorporate into one of our plug-ins.
 
-><small>**NOTE** For this scenario, the shared library doesn't have to be referenced by the plug-in definition library.  In these cases, that library's version is likely to change, prompting a required change from the plug-ins anyway.  Here, we're just talking about some third-party library that happens to be used by both.</small>
+***NOTE** For this scenario, the shared library doesn't have to be referenced by the plug-in definition library.  In these cases, that library's version is likely to change, prompting a required change from the plug-ins anyway.  Here, we're just talking about some third-party library that happens to be used by both.*
 
 Because I'm proud of it, and it's largely text-based, we're going to incorporate Manatee.Json into the app by reading the "stock" values from a `.json` file.
 
@@ -39,7 +39,7 @@ becomes
 
 Then the rest doesn't change.
 
-><small>**NOTE** We should also change the type of `translations` to a dictionary to dynamically update the "stock" languages by updating the file, but this works for my purposes.</small>
+***NOTE** We should also change the type of `translations` to a dictionary to dynamically update the "stock" languages by updating the file, but this works for my purposes.*
 
 Then let's say we have a plug-in that provides the text in German that also wants to read from a `.json` file and uses my library.  (I'm willing to bet you can work out the code, so I'll leave that to you.  Consider it homework.)
 

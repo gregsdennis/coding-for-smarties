@@ -33,6 +33,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
+  background-color: #ddd;
 }
 
 #skip-to-content {
@@ -182,6 +183,14 @@ a {
   }
 }
 
+
+.article-content {
+  background: #fff;
+  border-radius:5px;
+  box-shadow:0px 0px 30px #bbb;
+  padding: 20px;
+}
+
 .main-content {
   word-wrap: break-word;
 
@@ -236,7 +245,7 @@ a {
   h4,
   h5,
   h6 {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     font-weight: normal;
     color: $section-headings-color;

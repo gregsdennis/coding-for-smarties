@@ -9,7 +9,7 @@ I recently came across this blog post in which the author provides a tip on how 
 
 <!--more-->
 
-><small>Mr. Mains, if you're reading this, I'm not trying to rip apart your code or suggest anything about your ability to write quality code. I also had this idea about 8 months ago, and the points I make below were revealed by developers more seasoned than me. My intent is to make us all better developers by not only thinking about the functionality of the code we write, but also its readability and maintainability.</small>
+***ASIDE** Mr. Mains, if you're reading this, I'm not trying to rip apart your code or suggest anything about your ability to write quality code. I also had this idea about 8 months ago, and the points I make below were revealed by developers more seasoned than me. My intent is to make us all better developers by not only thinking about the functionality of the code we write, but also its readability and maintainability.*
 
 In .Net, extension methods are used to provide additional functionality on an object in such a way so that the code reads as if the method were actually part of that object without actually having to change it. It's syntactic sugar, nothing more. In reality, you're calling a static method and passing in the object as a parameter. Let's take a look at the LINQ extension method Count() to see what's really going on.
 

@@ -36,7 +36,7 @@ Let's get on with C# 8 then.
 
 I'll be going through [this list](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#switch-expressions) published by Microsoft.  They give some examples and details that I won't get into here.
 
-> <small>Honestly, in typing this list, I realized that I haven't read much about many of these.  Let's see how this goes!</small>
+***ASIDE** Honestly, in typing this list, I realized that I haven't read much about many of these.  Let's see how this goes!*
 
 ### Readonly members
 
