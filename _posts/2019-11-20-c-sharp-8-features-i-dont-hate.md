@@ -110,6 +110,7 @@ It's really just a compiler trick, but it's one that I don't think we need.
 
 To completely disprove my point, Jon Skeet [wrote a post](https://codeblog.jonskeet.uk/2019/02/10/nullableattribute-and-c-8/) about his efforts to convert his NodaTime library to use nullable reference types, and he found a number of bugs.  So... ¯\\\_(ツ)_/¯
 
+<div id="nullable-ref-use-attribute"></div>
 Personally, I think this is the wrong approach to solving the problem.  I think a `[NotNull]` attribute (like the one implemented by Resharper's analysis engine) is better because it doesn't change how we read the language.
 
 Fortunately, they're opt-in (for now), so I don't have to update all of my code to take advantage of the other features listed here.
