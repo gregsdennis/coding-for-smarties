@@ -33,7 +33,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
-  background-color: #ddd;
+  background-color: #555;
 }
 
 #skip-to-content {
@@ -166,7 +166,7 @@ a {
 .project-date {
   margin-bottom: 0rem;
   font-weight: normal;
-  opacity: 0.7;
+  opacity: 0.9;
   font-style: italic;
   text-shadow: 0 0 10px #000000;
 
@@ -185,9 +185,9 @@ a {
 
 
 .article-content {
-  background: #fff;
+  background: #eee;
   border-radius:5px;
-  box-shadow:0px 0px 30px #bbb;
+  box-shadow:0px 0px 30px #333;
   padding: 20px;
 }
 
@@ -452,8 +452,8 @@ a {
 
   .my-svg-icon {
 
-    color: $body-text-color; // IE8
-    fill: $body-text-color; // IE8
+    color: #eee; // IE8
+    fill: #eee; // IE8
     width: 24px;
     height: 24px;
 
