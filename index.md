@@ -5,3 +5,5 @@
 layout: home
 ---
 Welcome to my blog.  I made it just for you.
+
+I discuss software development and anything else that comes to mind.
