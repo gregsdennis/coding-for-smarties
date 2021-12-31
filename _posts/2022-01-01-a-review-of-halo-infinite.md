@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "A review of Halo: Infinite"
+title:  "A Review of Halo: Infinite"
 date:   2022-01-01 11:18:00 +1300
 tags: gaming halo
 excerpt_separator: <!--more-->
 ---
-
-# A review of Halo: Infinite
 
 ## Game Play
 
